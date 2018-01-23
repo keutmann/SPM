@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug 2013</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Keutmann.SharePointManager</RootNamespace>
+    <StartupObject>Keutmann.SharePointManager.Program</StartupObject>
+    <ApplicationIcon>CENADMIN.ICO</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>SPM2.snk</AssemblyOriginatorKeyFile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug 2010|AnyCPU' ">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug 2010\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2010|AnyCPU'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\SharePoint Manager 2010\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug 2013\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OutputPath>bin\SharePoint Manager 2013\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <!--<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 2010|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release 2010|AnyCPU'">
+    <AssemblyName>SharePoint Manager 2010</AssemblyName>
+  </PropertyGroup>-->
+  <PropertyGroup>
+    <AssemblyName>SharePoint Manager 2010</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU'">
+    <AssemblyName>SharePoint Manager 2013</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\SPM2.Framework\SPM2.Framework.csproj">
+      <Project>{5de0d29f-de15-4e15-9e89-3a873d849c40}</Project>
+      <Name>SPM2.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\SPM2.SharePoint\SPM2.SharePoint2010.csproj">
+      <Project>{ce144460-64ce-4fb5-a25e-25b7bb028d16}</Project>
+      <Name>SPM2.SharePoint2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=2.6.3.862, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\Autofac-2.6.3.862-NET35\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.ComponentModel.Composition" Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU'" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collections\ChangedNodes.cs" />
+    <Compile Include="Collections\IChangedNodes.cs" />
+    <Compile Include="Commands\RefreshNodeCommand.cs" />
+    <Compile Include="Commands\SaveAllNodeCommand.cs" />
+    <Compile Include="Commands\ExitCommand.cs" />
+    <Compile Include="Commands\SaveNodeCommand.cs" />
+    <Compile Include="Components\MainWindowStatusLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Context\GenericDelete.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Context\SPFileRecycle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Context\SPFileDownload.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Context\GenericRefesh.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Context\SPFeatureDeactivate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Context\SPFeatureActivate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Edit\SettingsMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Edit\RefreshMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Help\AboutMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Help\HelpMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Language\EnglishMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Language\LanguageMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\MenuSeparators.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\File\SaveAllMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\Edit\EditMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\File\ExitMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\File\FileMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\ISPMenuItem.cs" />
+    <Compile Include="Components\Menu\MainMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\File\SaveMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\Menu\View\ViewMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\SettingsPropertyGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\SettingsTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TreeViewExplorer\NodeSorter.cs" />
+    <Compile Include="Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralSettings.cs" />
+    <Compile Include="Library\ISPMLocalization.cs" />
+    <Compile Include="PreflightController.cs" />
+    <Compile Include="ViewModel\TreeView\SPMoreNode.cs" />
+    <Compile Include="ViewModel\TreeView\StuctureItem.cs" />
+    <Compile Include="ViewModel\TreeView\TreeViewNodeProvider.cs" />
+    <Compile Include="ViewModel\TreeView\SPTreeNode.cs" />
+    <Compile Include="Components\TreeViewComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\ReadOnlyPropertyGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\SPMTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\TabDataGridViewPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\TabBrowserPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\TabPropertyPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\TabXmlPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\TabPages.cs" />
+    <Compile Include="Components\TabControl\TabTextPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Menu\Context\SPContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TreeViewExplorer\ExplorerNodeBase.cs" />
+    <Compile Include="Forms\OpenDBConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OpenDBConnection.Designer.cs">
+      <DependentUpon>OpenDBConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\ExportImport\RestoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functions\ExportImport\RestoreForm.Designer.cs">
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\SPMLocalization.cs" />
+    <Compile Include="Library\SPMReflection.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPManagerLanguage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPManagerLanguage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SPManagerLanguage.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPManagerLanguage.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SPManagerLanguage.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPManagerLanguage.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SPManagerLanguage.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPManagerLanguage.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SPManagerLanguage.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPManagerLanguage.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\TreeView\ITreeViewNodeProvider.cs" />
+    <EmbeddedResource Include="Components\TabControl\TabBrowserPage.resx">
+      <DependentUpon>TabBrowserPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\About.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OpenDBConnection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OpenDBConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Functions\ExportImport\RestoreForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPManagerLanguage.en.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SPManagerLanguage.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPManagerLanguage.es.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SPManagerLanguage.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPManagerLanguage.nl.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SPManagerLanguage.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPManagerLanguage.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SPManagerLanguage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPManagerLanguage.sv.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SPManagerLanguage.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config.2013" />
+    <None Include="app.config.2010" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <None Include="SPM2.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CENADMIN.ICO" />
+    <None Include="Resources\about.gif" />
+    <None Include="Resources\copy.gif" />
+    <None Include="Resources\cut.gif" />
+    <None Include="Resources\delete.gif" />
+    <None Include="Resources\AppPool.gif" />
+    <Content Include="Resources\Documents\License.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Documents\Readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\actionssettings.gif" />
+    <Content Include="Resources\Images\cancel.gif" />
+    <Content Include="Resources\Images\dbconnection.gif" />
+    <Content Include="Resources\Images\GlobalServer.gif" />
+    <Content Include="Resources\Images\icon-property.gif" />
+    <Content Include="Resources\Images\Internet.gif" />
+    <SplashScreen Include="Resources\Images\loading.png" />
+    <Content Include="Resources\Images\server.gif" />
+    <Content Include="Resources\Images\ServerConfig.gif" />
+    <Content Include="Resources\Images\system.gif" />
+    <None Include="Resources\Jobs16.gif" />
+    <None Include="Resources\WebAppPool.gif" />
+    <None Include="Resources\paste.gif" />
+    <None Include="Resources\page.gif" />
+    <None Include="Resources\refresh3.gif" />
+    <None Include="Resources\undo.gif" />
+    <None Include="Resources\saveall.gif" />
+    <None Include="Resources\save.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Functions\EventHandler\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild" Condition="'$(Configuration)|$(Platform)' == 'Debug 2010|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release 2010|AnyCPU'">
+    <Delete Files="$(TargetDir)$(TargetFileName).config" />
+    <Copy SourceFiles="$(ProjectDir)app.config.2010" DestinationFiles="$(TargetDir)$(TargetFileName).config" />
+  </Target>
+  <Target Name="AfterBuild" Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU'">
+    <Delete Files="$(TargetDir)$(TargetFileName).config" />
+    <Copy SourceFiles="$(ProjectDir)app.config.2013" DestinationFiles="$(TargetDir)$(TargetFileName).config" />
+  </Target>
+</Project>

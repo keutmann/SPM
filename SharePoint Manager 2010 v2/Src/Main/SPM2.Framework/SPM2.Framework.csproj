@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5DE0D29F-DE15-4E15-9E89-3A873D849C40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPM2.Framework</RootNamespace>
+    <AssemblyName>SPM2.Framework</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SPM2.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Generate %28Debug%29|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>..\..\..\Build\SPM2.Framework.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\AdapterItemTypeAttribute.cs" />
+    <Compile Include="Attributes\LoadAddInTypes.cs" />
+    <Compile Include="Attributes\TitleAttribute.cs" />
+    <Compile Include="Collections\IOrderMetadata.cs" />
+    <Compile Include="Collections\ObservableCollectionXML.cs" />
+    <Compile Include="Collections\OrderingCollection.cs" />
+    <Compile Include="Collections\SerializableList.cs" />
+    <Compile Include="Collections\ThreadSafeDictionary.cs" />
+    <Compile Include="Collections\TypesCollection.cs" />
+    <Compile Include="ComponentModel\IContextMenuItem.cs" />
+    <Compile Include="Configuration\ISettings.cs" />
+    <Compile Include="ComponentModel\PropertyGridPropertyDescriptor.cs" />
+    <Compile Include="ComponentModel\PropertyGridTypeConverter.cs" />
+    <Compile Include="ComponentModel\PropertyGridEditValue.cs" />
+    <Compile Include="ComponentModel\ExportToSettingsAttribute.cs" />
+    <Compile Include="Configuration\Settings.cs" />
+    <Compile Include="Configuration\SettingsProvider.cs" />
+    <Compile Include="ComponentModel\TypeNames.cs" />
+    <Compile Include="Configuration\SettingsRoot.cs" />
+    <Compile Include="Extensions\ArrayExtensions.cs" />
+    <Compile Include="Extensions\CollectionExtensions.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\FileExtensions.cs" />
+    <Compile Include="Extensions\FileInfoExtensions.cs" />
+    <Compile Include="Extensions\HashAlgorithmExtensions.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\UriExtensions.cs" />
+    <Compile Include="IO\Win32.cs" />
+    <Compile Include="Properties\SPM2AssemblyInfo.cs" />
+    <Compile Include="Providers\CompositionProvider.cs" />
+    <Compile Include="Validation\BaseValidator.cs" />
+    <Compile Include="Validation\IValidator.cs" />
+    <Compile Include="Validation\ValidatorCollection.cs" />
+    <Compile Include="Validation\ValidationResult.cs" />
+    <Compile Include="Validation\ValidationService.cs" />
+    <Compile Include="Validation\ValidatorException.cs" />
+    <Compile Include="Window\ConsoleManager.cs" />
+    <Compile Include="Window\IWindowsProvider.cs" />
+    <Compile Include="Providers\AbstractProvider.cs" />
+    <Compile Include="Providers\AssemblyProvider.cs" />
+    <Compile Include="Attributes\AddInIDAttribute.cs" />
+    <Compile Include="Attributes\ProviderAttribute.cs" />
+    <Compile Include="Attributes\IconAttribute.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Configuration\ConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\ProviderElement.cs" />
+    <Compile Include="Configuration\ProviderElementCollection.cs" />
+    <Compile Include="Configuration\ProviderTypes.cs" />
+    <Compile Include="Configuration\SPM2Configuration.cs" />
+    <Compile Include="Enums\CommandAvailablility.cs" />
+    <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Window\IAddInWindow.cs" />
+    <Compile Include="Window\IPadWindow.cs" />
+    <Compile Include="Window\IDocumentWindow.cs" />
+    <Compile Include="Window\WindowCreatedEventHandler.cs" />
+    <Compile Include="Window\WindowEventArgs.cs" />
+    <Compile Include="Reflection\ClassDescriptor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\EnumDescConverter.cs" />
+    <Compile Include="Xml\Serializer.cs" />
+    <Compile Include="Xml\XmlAttributeOverridesExtensions.cs" />
+    <Compile Include="Xml\XmlAttributeOverridesFactory.cs" />
+    <Compile Include="Xml\XmlAttributesEntensions.cs" />
+    <Compile Include="Xml\XmlSerializerFactoryExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SPM2.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\ICSharpCode.TreeView\ICSharpCode.TreeView.csproj">
+      <Project>{DDE2A481-8271-4EAC-A330-8FA6A38D13D1}</Project>
+      <Name>ICSharpCode.TreeView</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\MEF\ComponentModel\MEF35.csproj">
+      <Project>{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}</Project>
+      <Name>MEF35</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ComponentModel\TreeView\" />
+    <Folder Include="Components\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\mbllistbullet.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

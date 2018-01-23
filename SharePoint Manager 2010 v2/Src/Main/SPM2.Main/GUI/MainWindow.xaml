@@ -1,0 +1,61 @@
+﻿<Window x:Class="SPM2.Main.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+        xmlns:vm="clr-namespace:SPM2.Main.ViewModel"
+        Title="SharePoint Manager 2010 v2" Height="568" Width="1000">
+    <Window.Resources>
+        <vm:MainWindowModel x:Key="Model" d:IsDataSource="True" />
+    </Window.Resources>
+    <Grid x:Name="WindowGrid" DataContext="{Binding Source={StaticResource ResourceKey=Model}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"  />
+            <RowDefinition Height="24"  />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="24"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="MenuContainer" x:FieldModifier="public" Grid.Row="0" >
+            <ItemsControl ItemsSource="{Binding Path=Menus.Values}">
+            </ItemsControl>
+        </StackPanel>
+        <DockPanel Grid.Row="1">
+            <ToolBarTray x:Name="ToolBarTrayControl" DockPanel.Dock="Top" >
+                <ToolBarTray.Resources>
+                    <Style TargetType="{x:Type Image}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type ButtonBase}, AncestorLevel=1}, Path=IsEnabled}" Value="False">
+                                <Setter Property="Opacity" Value="0.30" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ToolBarTray.Resources>
+            </ToolBarTray>
+        </DockPanel>
+
+        <ad:DockingManager x:Name="DockManager" x:FieldModifier="public" Grid.Row="2">
+            <ad:ResizingPanel Orientation="Vertical">
+                <ad:ResizingPanel Orientation="Horizontal">
+                    
+                    <ad:DockablePane x:Name="LeftDockPane" ad:ResizingPanel.ResizeWidth="350">
+                    </ad:DockablePane>
+                    
+                    <ad:DocumentPane x:Name="ContentPane">
+                    </ad:DocumentPane>
+                </ad:ResizingPanel>
+                <ad:DockablePane x:Name="BottomDockPane" ad:ResizingPanel.ResizeHeight="150">
+                </ad:DockablePane>
+            </ad:ResizingPanel>
+        </ad:DockingManager>
+
+
+        <StatusBar Grid.Row="3" x:Name="BottomStatusBar" x:FieldModifier="public">
+            <StatusBarItem>
+                <TextBlock x:Name="FirstTextBlock" x:FieldModifier="public" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

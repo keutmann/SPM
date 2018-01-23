@@ -1,0 +1,108 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint Manager", "Main\SharePoint Manager.csproj", "{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPM2.Framework", "..\Libraries\SPM2.Framework\SPM2.Framework.csproj", "{5DE0D29F-DE15-4E15-9E89-3A873D849C40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPM2.SharePoint2010", "..\Libraries\SPM2.SharePoint\SPM2.SharePoint2010.csproj", "{CE144460-64CE-4FB5-A25E-25B7BB028D16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPM2.SharePoint2013", "..\Libraries\SPM2.SharePoint2013\SPM2.SharePoint2013.csproj", "{48E7192B-2165-4561-B9B0-9A1BDB492893}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assemblies", "Assemblies", "{092C7F46-B992-40DF-B8E1-C9ED43AF5B21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net35", "Net35", "{87F69CCB-26E5-4023-A61B-3730B459B1EE}"
+	ProjectSection(SolutionItems) = preProject
+		..\Libraries\Autofac-2.6.3.862-NET35\Autofac.dll = ..\Libraries\Autofac-2.6.3.862-NET35\Autofac.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net40", "Net40", "{D44369B4-636F-4729-A280-1D0F9D3D0125}"
+	ProjectSection(SolutionItems) = preProject
+		..\Libraries\Autofac-2.6.3.862-NET40\Autofac.dll = ..\Libraries\Autofac-2.6.3.862-NET40\Autofac.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs05
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Main\\SharePoint\u0020Manager.csproj
+		SccProjectName1 = Main
+		SccLocalPath1 = Main
+		SccProjectUniqueName2 = ..\\Libraries\\SPM2.Framework\\SPM2.Framework.csproj
+		SccProjectName2 = ../Libraries/SPM2.Framework
+		SccLocalPath2 = ..\\Libraries\\SPM2.Framework
+		SccProjectUniqueName3 = ..\\Libraries\\SPM2.SharePoint\\SPM2.SharePoint2010.csproj
+		SccProjectName3 = ../Libraries/SPM2.SharePoint
+		SccLocalPath3 = ..\\Libraries\\SPM2.SharePoint
+		SccProjectUniqueName4 = ..\\Libraries\\SPM2.SharePoint2013\\SPM2.SharePoint2013.csproj
+		SccProjectName4 = ../Libraries/SPM2.SharePoint2013
+		SccLocalPath4 = ..\\Libraries\\SPM2.SharePoint2013
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug 2010|Any CPU = Debug 2010|Any CPU
+		Debug 2010|x64 = Debug 2010|x64
+		Debug 2013|Any CPU = Debug 2013|Any CPU
+		Debug 2013|x64 = Debug 2013|x64
+		Release 2010|Any CPU = Release 2010|Any CPU
+		Release 2010|x64 = Release 2010|x64
+		Release 2013|Any CPU = Release 2013|Any CPU
+		Release 2013|x64 = Release 2013|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Debug 2010|Any CPU.ActiveCfg = Debug 2010|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Debug 2010|Any CPU.Build.0 = Debug 2010|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Debug 2010|x64.ActiveCfg = Debug 2010|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Debug 2013|Any CPU.ActiveCfg = Debug 2013|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Debug 2013|Any CPU.Build.0 = Debug 2013|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Debug 2013|x64.ActiveCfg = Debug 2013|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Release 2010|Any CPU.ActiveCfg = Release 2010|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Release 2010|Any CPU.Build.0 = Release 2010|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Release 2010|x64.ActiveCfg = Release 2010|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Release 2013|Any CPU.ActiveCfg = Release 2013|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Release 2013|Any CPU.Build.0 = Release 2013|Any CPU
+		{93C1FBBA-D785-4E4F-93CC-C8CA95BD889A}.Release 2013|x64.ActiveCfg = Release 2013|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Debug 2010|Any CPU.ActiveCfg = Debug 2010|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Debug 2010|Any CPU.Build.0 = Debug 2010|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Debug 2010|x64.ActiveCfg = Debug 2010|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Debug 2013|Any CPU.ActiveCfg = Debug 2013|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Debug 2013|Any CPU.Build.0 = Debug 2013|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Debug 2013|x64.ActiveCfg = Debug 2013|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Release 2010|Any CPU.ActiveCfg = Release 2010|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Release 2010|Any CPU.Build.0 = Release 2010|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Release 2010|x64.ActiveCfg = Release 2010|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Release 2013|Any CPU.ActiveCfg = Release 2013|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Release 2013|Any CPU.Build.0 = Release 2013|Any CPU
+		{5DE0D29F-DE15-4E15-9E89-3A873D849C40}.Release 2013|x64.ActiveCfg = Release 2013|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Debug 2010|Any CPU.ActiveCfg = Debug 2010|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Debug 2010|Any CPU.Build.0 = Debug 2010|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Debug 2010|x64.ActiveCfg = Debug 2010|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Debug 2013|Any CPU.ActiveCfg = Debug 2013|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Debug 2013|Any CPU.Build.0 = Debug 2013|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Debug 2013|x64.ActiveCfg = Debug 2013|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Release 2010|Any CPU.ActiveCfg = Release 2010|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Release 2010|Any CPU.Build.0 = Release 2010|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Release 2010|x64.ActiveCfg = Release 2010|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Release 2013|Any CPU.ActiveCfg = Release 2013|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Release 2013|Any CPU.Build.0 = Release 2013|Any CPU
+		{CE144460-64CE-4FB5-A25E-25B7BB028D16}.Release 2013|x64.ActiveCfg = Release 2013|Any CPU
+		{48E7192B-2165-4561-B9B0-9A1BDB492893}.Debug 2010|Any CPU.ActiveCfg = Debug 2013|Any CPU
+		{48E7192B-2165-4561-B9B0-9A1BDB492893}.Debug 2010|x64.ActiveCfg = Debug 2013|Any CPU
+		{48E7192B-2165-4561-B9B0-9A1BDB492893}.Debug 2013|Any CPU.ActiveCfg = Debug 2013|Any CPU
+		{48E7192B-2165-4561-B9B0-9A1BDB492893}.Debug 2013|Any CPU.Build.0 = Debug 2013|Any CPU
+		{48E7192B-2165-4561-B9B0-9A1BDB492893}.Debug 2013|x64.ActiveCfg = Debug 2013|Any CPU
+		{48E7192B-2165-4561-B9B0-9A1BDB492893}.Release 2010|Any CPU.ActiveCfg = Release 2013|Any CPU
+		{48E7192B-2165-4561-B9B0-9A1BDB492893}.Release 2010|x64.ActiveCfg = Release 2013|Any CPU
+		{48E7192B-2165-4561-B9B0-9A1BDB492893}.Release 2013|Any CPU.ActiveCfg = Release 2013|Any CPU
+		{48E7192B-2165-4561-B9B0-9A1BDB492893}.Release 2013|Any CPU.Build.0 = Release 2013|Any CPU
+		{48E7192B-2165-4561-B9B0-9A1BDB492893}.Release 2013|x64.ActiveCfg = Release 2013|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87F69CCB-26E5-4023-A61B-3730B459B1EE} = {092C7F46-B992-40DF-B8E1-C9ED43AF5B21}
+		{D44369B4-636F-4729-A280-1D0F9D3D0125} = {092C7F46-B992-40DF-B8E1-C9ED43AF5B21}
+	EndGlobalSection
+EndGlobal

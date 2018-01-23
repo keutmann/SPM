@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{41F4B9DA-64BD-4029-8E73-B737FDD3E7F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPM2.Main</RootNamespace>
+    <AssemblyName>SPM2.Main</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SPM2.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Generate %28Debug%29|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>..\..\..\Build\SPM2.Main.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\About.cs" />
+    <Compile Include="Commands\ContextMenu\SPFeatureNodeContextMenu.cs" />
+    <Compile Include="Commands\ContextMenu\SPNodeContextMenu.cs" />
+    <Compile Include="Commands\Settings.cs" />
+    <Compile Include="Commands\Help.cs" />
+    <Compile Include="Commands\Save.cs" />
+    <Compile Include="Commands\ToolBars\MainToolBar.cs" />
+    <Compile Include="Commands\ToolBars\Main\Save.cs" />
+    <Compile Include="Commands\View.cs" />
+    <Compile Include="Commands\FileMenu.cs" />
+    <Compile Include="Commands\Exit.cs" />
+    <Compile Include="ComponentModel\GeneralSettings.cs" />
+    <Compile Include="ComponentModel\StringEditor.cs" />
+    <Compile Include="ViewModel\TreeView\DummyChild.cs" />
+    <Compile Include="ViewModel\TreeView\TreeViewNodeProvider.cs" />
+    <Compile Include="GUI\MainMenu.cs" />
+    <Compile Include="GUI\Pads\BrowserPad.cs" />
+    <Compile Include="GUI\Pads\SPTreeViewPad.cs" />
+    <Compile Include="GUI\Pads\EditorPad.cs" />
+    <Compile Include="GUI\Pads\PropertyGridPad.cs" />
+    <Compile Include="GUI\AboutBox.xaml.cs">
+      <DependentUpon>AboutBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AppModel.cs" />
+    <Compile Include="ViewModel\MainWindowModel.cs" />
+    <Compile Include="ViewModel\TreeView\IItemNode.cs" />
+    <Compile Include="ViewModel\TreeView\ItemNode.cs" />
+    <Compile Include="ViewModel\TreeView\ITreeViewNodeProvider.cs" />
+    <Compile Include="WindowsManager.cs" />
+    <Compile Include="Properties\WPFAssemblyInfo.cs" />
+    <Page Include="GUI\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="GUI\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="GUI\AboutBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+    <None Include="SPM2.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\AvalonDock\AvalonDock35.csproj">
+      <Project>{87E61430-4243-45F2-B74E-0A4C096CEBF3}</Project>
+      <Name>AvalonDock35</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\AvalonEdit\AvalonEdit.csproj">
+      <Project>{6C55B776-26D4-4DB3-A6AB-87E783B2F3D1}</Project>
+      <Name>AvalonEdit</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\GalaSoft\GalaSoft.MvvmLight %28NET35%29\GalaSoft.MvvmLight %28NET35%29.csproj">
+      <Project>{ADB28C09-8DE9-4006-80D5-74856EB4A48B}</Project>
+      <Name>GalaSoft.MvvmLight %28NET35%29</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\GalaSoft\GalaSoft.MvvmLight.Extras %28NET35%29\GalaSoft.MvvmLight.Extras %28NET35%29.csproj">
+      <Project>{78EECC01-BAE7-4914-BE2D-6BAB1059F29B}</Project>
+      <Name>GalaSoft.MvvmLight.Extras %28NET35%29</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\ICSharpCode.TreeView\ICSharpCode.TreeView.csproj">
+      <Project>{DDE2A481-8271-4EAC-A330-8FA6A38D13D1}</Project>
+      <Name>ICSharpCode.TreeView</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\MEF\ComponentModel\MEF35.csproj">
+      <Project>{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}</Project>
+      <Name>MEF35</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SPM2.Framework.WPF\SPM2.Framework.WPF.csproj">
+      <Project>{C97ECB36-3AF4-4788-8251-E57FAB93CB87}</Project>
+      <Name>SPM2.Framework.WPF</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SPM2.Framework\SPM2.Framework.csproj">
+      <Project>{5DE0D29F-DE15-4E15-9E89-3A873D849C40}</Project>
+      <Name>SPM2.Framework</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SPM2.SharePoint\SPM2.SharePoint2010.csproj">
+      <Project>{CE144460-64CE-4FB5-A25E-25B7BB028D16}</Project>
+      <Name>SPM2.SharePoint2010</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ComponentModel\TreeView\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Cut.png" />
+    <Resource Include="Resources\Images\Delete.png" />
+    <Resource Include="Resources\Images\Open.png" />
+    <Resource Include="Resources\Images\Paste.png" />
+    <Resource Include="Resources\Images\Redo.png" />
+    <Resource Include="Resources\Images\Save.png" />
+    <Resource Include="Resources\Images\Undo.png" />
+    <Resource Include="Resources\Images\WordWrap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\tent.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AboutLogo.png">
+      <SubType>Image</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\about.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\refresh3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\SplashScreen.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

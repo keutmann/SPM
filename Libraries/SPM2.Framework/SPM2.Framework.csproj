@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5DE0D29F-DE15-4E15-9E89-3A873D849C40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPM2.Framework</RootNamespace>
+    <AssemblyName>SPM2.Framework</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug 2010|AnyCPU' ">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug 2010\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2010|AnyCPU'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release 2010\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug 2013\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OutputPath>bin\Release 2013\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SPM2.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\Autofac-2.6.3.862-NET35\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU'" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ViewAttribute.cs" />
+    <Compile Include="Attributes\LoadAddInTypes.cs" />
+    <Compile Include="Attributes\TitleAttribute.cs" />
+    <Compile Include="Commands\CommandManager.cs" />
+    <Compile Include="Commands\ICommandUndo.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Components\IRule.cs" />
+    <Compile Include="Collections\ObservableCollectionXML.cs" />
+    <Compile Include="Collections\SerializableList.cs" />
+    <Compile Include="Collections\ThreadSafeDictionary.cs" />
+    <Compile Include="Collections\TypesCollection.cs" />
+    <Compile Include="ComponentModel\IContextMenuItem.cs" />
+    <Compile Include="Components\RuleEngine.cs" />
+    <Compile Include="Configuration\ISettings.cs" />
+    <Compile Include="ComponentModel\PropertyGridPropertyDescriptor.cs" />
+    <Compile Include="ComponentModel\PropertyGridTypeConverter.cs" />
+    <Compile Include="ComponentModel\PropertyGridEditValue.cs" />
+    <Compile Include="Configuration\Settings.cs" />
+    <Compile Include="Configuration\SettingsProvider.cs" />
+    <Compile Include="ComponentModel\TypeNames.cs" />
+    <Compile Include="Configuration\SettingsRoot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Diagnostics\TimeLog.cs" />
+    <Compile Include="Extensions\ArrayExtensions.cs" />
+    <Compile Include="Extensions\CollectionExtensions.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\FileExtensions.cs" />
+    <Compile Include="Extensions\FileInfoExtensions.cs" />
+    <Compile Include="Extensions\HashAlgorithmExtensions.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\TreeViewExtensions.cs" />
+    <Compile Include="Extensions\UriExtensions.cs" />
+    <Compile Include="Forms\TreeViewExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\TreeViewSelectedNodeChangedArgs.cs" />
+    <Compile Include="IoC\AutoFacExtensions.cs" />
+    <Compile Include="IoC\AutofacIocAdapter.cs" />
+    <Compile Include="IoC\AutoLoadAssemblies.cs" />
+    <Compile Include="IoC\BindAttribute.cs" />
+    <Compile Include="IoC\IContainerAdapterExtensions.cs" />
+    <Compile Include="Attributes\IFilter.cs" />
+    <Compile Include="IoC\IoCOrderAttribute.cs" />
+    <Compile Include="IoC\IContainerAdapter.cs" />
+    <Compile Include="IoC\IoCDecoratorAttribute.cs" />
+    <Compile Include="IoC\IoCIgnoreAttribute.cs" />
+    <Compile Include="IoC\IoCLifetimeAttribute.cs" />
+    <Compile Include="IoC\IoCNamedAttribute.cs" />
+    <Compile Include="IoC\IoCPropertiesAutowiredAttribute.cs" />
+    <Compile Include="IoC\MenuItemViewModel.cs" />
+    <Compile Include="IoC\Windows\Forms\IMenuItem.cs" />
+    <Compile Include="IoC\Windows\Forms\IoCMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IO\Win32.cs" />
+    <Compile Include="Properties\SPM2AssemblyInfo.cs" />
+    <Compile Include="Providers\IoCContainer.cs" />
+    <Compile Include="Threading\ITask.cs" />
+    <Compile Include="Threading\Task.cs" />
+    <Compile Include="Validation\BaseValidator.cs" />
+    <Compile Include="Validation\IValidator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Validation\ValidatorCollection.cs" />
+    <Compile Include="Validation\ValidationResult.cs" />
+    <Compile Include="Validation\ValidationService.cs" />
+    <Compile Include="Validation\ValidatorException.cs" />
+    <Compile Include="Window\ConsoleManager.cs" />
+    <Compile Include="Window\IWindowsProvider.cs" />
+    <Compile Include="Providers\AbstractProvider.cs" />
+    <Compile Include="Providers\AssemblyProvider.cs" />
+    <Compile Include="Attributes\AddInIDAttribute.cs" />
+    <Compile Include="Attributes\ProviderAttribute.cs" />
+    <Compile Include="Attributes\IconAttribute.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Configuration\ConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\ProviderElement.cs" />
+    <Compile Include="Configuration\ProviderElementCollection.cs" />
+    <Compile Include="Configuration\ProviderTypes.cs" />
+    <Compile Include="Configuration\SPM2Configuration.cs" />
+    <Compile Include="Enums\CommandAvailablility.cs" />
+    <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Window\IAddInWindow.cs" />
+    <Compile Include="Window\IPadWindow.cs" />
+    <Compile Include="Window\IDocumentWindow.cs" />
+    <Compile Include="Window\WindowCreatedEventHandler.cs" />
+    <Compile Include="Window\WindowEventArgs.cs" />
+    <Compile Include="Reflection\ClassDescriptor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\EnumDescConverter.cs" />
+    <Compile Include="Xml\Serializer.cs" />
+    <Compile Include="Xml\XmlAttributeOverridesExtensions.cs" />
+    <Compile Include="Xml\XmlAttributeOverridesFactory.cs" />
+    <Compile Include="Xml\XmlAttributesEntensions.cs" />
+    <Compile Include="Xml\XmlSerializerFactoryExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SPM2.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ComponentModel\TreeView\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\mbllistbullet.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

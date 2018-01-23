@@ -1,0 +1,39 @@
+﻿<Window x:Class="SPM2AuditLog.Windows.AuditLogViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AuditLogViewer" Height="491" Width="629">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28" />
+            <RowDefinition Height="399*" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <ToolBarPanel Grid.Row="0" Name="toolBarPanel1">
+            <ToolBar Name="toolBar1" >
+                <Button Content="Refresh" Height="23" Name="btnRefresh" Width="75" />
+            </ToolBar>
+        </ToolBarPanel>
+
+        <ListView Grid.Row="1" Name="listView1" ItemsSource="{Binding Model}">
+            <ListView.View>
+                <GridView>
+                    <!--<GridViewColumn Header="ID" DisplayMemberBinding="{Binding Path=ID}"></GridViewColumn>
+                    <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Path=Username}"></GridViewColumn>
+                    <GridViewColumn Header="Password" DisplayMemberBinding="{Binding Path=Password}"></GridViewColumn>-->
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <StatusBar Grid.Row="2"  Name="statusBar1">
+            <ContentControl></ContentControl>
+        </StatusBar>
+    </Grid>
+</Window>

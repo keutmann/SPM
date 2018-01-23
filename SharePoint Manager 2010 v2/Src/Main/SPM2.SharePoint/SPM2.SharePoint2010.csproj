@@ -1,0 +1,943 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE144460-64CE-4FB5-A25E-25B7BB028D16}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPM2.SharePoint</RootNamespace>
+    <AssemblyName>SPM2.SharePoint</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SPM2.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Generate %28Debug%29|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\SPM2.SharePoint.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.SharePoint.Client.ServerRuntime\14.0.0.0__71e9bce111e9429c\Microsoft.SharePoint.Client.ServerRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Search, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI\Microsoft.SharePoint.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ISPNodeProvider.cs" />
+    <Compile Include="Kernel\Owssvr.cs" />
+    <Compile Include="Model\Custom\SPViewFieldNode.cs" />
+    <Compile Include="Model\Custom\SPPropertyBagNode.cs" />
+    <Compile Include="Model\Custom\SPPropertyCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPPropertyNode.cs" />
+    <Compile Include="Model\ExportToContextMenuAttribute.cs" />
+    <Compile Include="Model\Custom\SPContentTypeUsageCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPContentTypeUsageNode.cs" />
+    <Compile Include="Model\Custom\SPLimitedWebPartCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPWebPartNode.cs" />
+    <Compile Include="Model\ExportToNodeAttribute.cs" />
+    <Compile Include="Model\Generated\SPContentTypeUsageCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPContentTypeUsageNode.cs" />
+    <Compile Include="Model\ISPNodeCollection.cs" />
+    <Compile Include="Model\MoreNode.cs" />
+    <Compile Include="Model\SPExplorerSettings.cs" />
+    <Compile Include="SharePointContext.cs" />
+    <Compile Include="Model\Custom\AccessServerWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\AccessServerWebServiceNode.cs" />
+    <Compile Include="Model\Custom\AccessServerWebServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\ApplicationRegistryServiceDatabaseNode.cs" />
+    <Compile Include="Model\Custom\ApplicationRegistryServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\ApplicationRegistryServiceNode.cs" />
+    <Compile Include="Model\Custom\ApplicationRegistryServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\BaseFieldControlNode.cs" />
+    <Compile Include="Model\Custom\BdcServiceApplicationProxyNode.cs" />
+    <Compile Include="Model\Custom\BdcServiceDatabaseNode.cs" />
+    <Compile Include="Model\Custom\BdcServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\BdcServiceNode.cs" />
+    <Compile Include="Model\Custom\BdcServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\BIMonitoringServiceDatabaseNode.cs" />
+    <Compile Include="Model\Custom\BIMonitoringServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\BIMonitoringServiceNode.cs" />
+    <Compile Include="Model\Custom\BIMonitoringServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\DataConnectionFileCollectionNode.cs" />
+    <Compile Include="Model\Custom\DataConnectionFileNode.cs" />
+    <Compile Include="Model\Custom\DiagnosticsServiceNode.cs" />
+    <Compile Include="Model\Custom\ExcelServerWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\ExcelServerWebServiceNode.cs" />
+    <Compile Include="Model\Custom\ExcelServerWebServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\ExemptUserAgentCollectionNode.cs" />
+    <Compile Include="Model\Custom\ExemptUserAgentNode.cs" />
+    <Compile Include="Model\Custom\FormsServiceNode.cs" />
+    <Compile Include="Model\Custom\FormTemplateCollectionNode.cs" />
+    <Compile Include="Model\Custom\FormTemplateNode.cs" />
+    <Compile Include="Model\Custom\GetCachedFieldNode.cs" />
+    <Compile Include="Model\Custom\GuidNode.cs" />
+    <Compile Include="Model\Custom\LauncherServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\LauncherServiceNode.cs" />
+    <Compile Include="Model\Custom\LoadBalancerServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\LoadBalancerServiceNode.cs" />
+    <Compile Include="Model\Custom\MetadataWebServiceDatabaseNode.cs" />
+    <Compile Include="Model\Custom\MetadataWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\MetadataWebServiceNode.cs" />
+    <Compile Include="Model\Custom\MetadataWebServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\MmsSenderInfoNode.cs" />
+    <Compile Include="Model\Custom\NotesWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\NotesWebServiceNode.cs" />
+    <Compile Include="Model\Custom\NotesWebServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\OfficeServerServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\OfficeServerServiceNode.cs" />
+    <Compile Include="Model\Custom\PolicyConfigServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\PolicyConfigServiceNode.cs" />
+    <Compile Include="Model\Custom\PortalServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\PortalServiceNode.cs" />
+    <Compile Include="Model\Custom\ProfileDatabaseNode.cs" />
+    <Compile Include="Model\Custom\ProfileSynchronizationServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\ProfileSynchronizationServiceNode.cs" />
+    <Compile Include="Model\Custom\QueueDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SearchAdminDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SearchAdminWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SearchAdminWebServiceNode.cs" />
+    <Compile Include="Model\Custom\SearchDataAccessServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SearchGathererDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SearchPropertyStoreDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SearchQueryAndSiteSettingsServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SearchQueryAndSiteSettingsServiceNode.cs" />
+    <Compile Include="Model\Custom\SearchQueryAndSiteSettingsServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\SearchServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SearchServiceNode.cs" />
+    <Compile Include="Model\Custom\SearchServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\SecureStoreServiceDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SecureStoreServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SecureStoreServiceNode.cs" />
+    <Compile Include="Model\Custom\SecureStoreServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\SessionStateDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SessionStateServiceApplicationNode.cs" />
+    <Compile Include="Model\Custom\SessionStateServiceNode.cs" />
+    <Compile Include="Model\Custom\SetCachedFieldNode.cs" />
+    <Compile Include="Model\Custom\SiteHitRuleNode.cs" />
+    <Compile Include="Model\Custom\SiteHitRulesCollectionNode.cs" />
+    <Compile Include="Model\Custom\SmsSenderInfoNode.cs" />
+    <Compile Include="Model\Custom\SocialDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SPActionLinkNode.cs" />
+    <Compile Include="Model\Custom\SPAdministrationLinkNode.cs" />
+    <Compile Include="Model\Custom\SPAdministrationServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPAdministrationServiceNode.cs" />
+    <Compile Include="Model\Custom\SPAdministrationWebApplicationNode.cs" />
+    <Compile Include="Model\Custom\SPAlertCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPAlertNode.cs" />
+    <Compile Include="Model\Custom\SPAlertTemplateNode.cs" />
+    <Compile Include="Model\Custom\SPAlternateUrlCollectionManagerNode.cs" />
+    <Compile Include="Model\Custom\SPAlternateUrlCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPAlternateUrlNode.cs" />
+    <Compile Include="Model\Custom\SPAntivirusSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPApplicationPoolCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPApplicationPoolNode.cs" />
+    <Compile Include="Model\Custom\SPAttachmentCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPAuditNode.cs" />
+    <Compile Include="Model\Custom\SPBlockedSolutionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPBlockedSolutionNode.cs" />
+    <Compile Include="Model\Custom\SPChangeTokenNode.cs" />
+    <Compile Include="Model\Custom\SPClickthroughUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPClientCallableSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPClientRequestServiceSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPConfigurationDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SPContentDatabaseCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPContentDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SPContentTypeCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPContentTypeNode.cs" />
+    <Compile Include="Model\Custom\SPContextNode.cs" />
+    <Compile Include="Model\Custom\SPContextPageInfoNode.cs" />
+    <Compile Include="Model\Custom\SPCopyDestinationCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPCopyDestinationNode.cs" />
+    <Compile Include="Model\Custom\SPCopyFieldMaskNode.cs" />
+    <Compile Include="Model\Custom\SPDatabaseCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SPDatabaseServerDiagnosticsPerformanceCounterProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDatabaseServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPDatabaseServiceNode.cs" />
+    <Compile Include="Model\Custom\SPDatabaseSnapshotCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPDatabaseSnapshotNode.cs" />
+    <Compile Include="Model\Custom\SPDataRetrievalProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDataRetrievalServicesSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPDefaultSolutionValidatorNode.cs" />
+    <Compile Include="Model\Custom\SPDeveloperDashboardSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsBlockingQueryProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsEventLogProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsProviderCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsServiceNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsSqlDmvProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsSqlMemoryProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsULSProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDistributionGroupJobDataNode.cs" />
+    <Compile Include="Model\Custom\SPDocTemplateCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPDocTemplateNode.cs" />
+    <Compile Include="Model\Custom\SPDocumentConverterCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPDocumentConverterNode.cs" />
+    <Compile Include="Model\Custom\SPDocumentLibraryNode.cs" />
+    <Compile Include="Model\Custom\SPEventReceiverDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPEventReceiverDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPExportUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPExternalApplicationProviderNode.cs" />
+    <Compile Include="Model\Custom\SPExternalApplicationSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPExternalBinaryIdCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPExternalBinaryIdNode.cs" />
+    <Compile Include="Model\Custom\SPFarmNode.cs" />
+    <Compile Include="Model\Custom\SPFeatureCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFeatureDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFeatureDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPFeatureDependencyCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFeatureNode.cs" />
+    <Compile Include="Model\Custom\SPFeaturePropertyCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFeaturePropertyNode.cs" />
+    <Compile Include="Model\Custom\SPFeatureUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPFieldCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFieldIndexCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFieldIndexNode.cs" />
+    <Compile Include="Model\Custom\SPFieldLinkCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFieldLinkNode.cs" />
+    <Compile Include="Model\Custom\SPFieldNode.cs" />
+    <Compile Include="Model\Custom\SPFieldTypeDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFieldTypeDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPFieldUserValueNode.cs" />
+    <Compile Include="Model\Custom\SPFileCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFileExtensionsCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFileNode.cs" />
+    <Compile Include="Model\Custom\SPFileVersionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFileVersionNode.cs" />
+    <Compile Include="Model\Custom\SPFolderCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFolderNode.cs" />
+    <Compile Include="Model\Custom\SPFormCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFormContextNode.cs" />
+    <Compile Include="Model\Custom\SPFormDigestSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPFormNode.cs" />
+    <Compile Include="Model\Custom\SPFormsAuthenticationProviderNode.cs" />
+    <Compile Include="Model\Custom\SPGroupCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPGroupNode.cs" />
+    <Compile Include="Model\Custom\SPHealthReportsListNode.cs" />
+    <Compile Include="Model\Custom\SPHealthRulesListNode.cs" />
+    <Compile Include="Model\Custom\SPHealthScoreCalculatorNode.cs" />
+    <Compile Include="Model\Custom\SPHourlyScheduleNode.cs" />
+    <Compile Include="Model\Custom\SPHtmlTransformSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPHttpThrottleSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPHttpThrottlingMonitorsNode.cs" />
+    <Compile Include="Model\Custom\SPIisSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPImportUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPIncomingEmailServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPIncomingEmailServiceNode.cs" />
+    <Compile Include="Model\Custom\SPIrmSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPItemNode.cs" />
+    <Compile Include="Model\Custom\SPJobDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPJobDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPJobHistoryEntriesNode.cs" />
+    <Compile Include="Model\Custom\SPJobHistoryNode.cs" />
+    <Compile Include="Model\Custom\SPLanguageCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPLanguageNode.cs" />
+    <Compile Include="Model\Custom\SPLinkCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPLinkNode.cs" />
+    <Compile Include="Model\Custom\SPListCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPListDataSourceNode.cs" />
+    <Compile Include="Model\Custom\SPListItemCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPListItemCollectionPositionNode.cs" />
+    <Compile Include="Model\Custom\SPListItemNode.cs" />
+    <Compile Include="Model\Custom\SPListItemVersionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPListItemVersionNode.cs" />
+    <Compile Include="Model\Custom\SPListNode.cs" />
+    <Compile Include="Model\Custom\SPListTemplateCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPListTemplateNode.cs" />
+    <Compile Include="Model\Custom\SPListWorkflowAssociationCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPLocaleCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPLocaleNode.cs" />
+    <Compile Include="Model\Custom\SPManagedAccountNode.cs" />
+    <Compile Include="Model\Custom\SPMemberNode.cs" />
+    <Compile Include="Model\Custom\SPMimeMappingCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPMimeMappingNode.cs" />
+    <Compile Include="Model\Custom\SPMimeTypeSetNode.cs" />
+    <Compile Include="Model\Custom\SPMinuteScheduleNode.cs" />
+    <Compile Include="Model\Custom\SPMobileBaseFieldControlNode.cs" />
+    <Compile Include="Model\Custom\SPMobileContextNode.cs" />
+    <Compile Include="Model\Custom\SPMobileMessageServiceProviderNode.cs" />
+    <Compile Include="Model\Custom\SPMobileMessageUserInfoNode.cs" />
+    <Compile Include="Model\Custom\SPMobileMessagingAccountNode.cs" />
+    <Compile Include="Model\Custom\SPModerationInformationNode.cs" />
+    <Compile Include="Model\Custom\SPModuleCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPModuleNode.cs" />
+    <Compile Include="Model\Custom\SPModulePropertyBagNode.cs" />
+    <Compile Include="Model\Custom\SPNavigationNode.cs" />
+    <Compile Include="Model\Custom\SPNavigationNodeCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPNavigationNodeNode.cs" />
+    <Compile Include="Model\Custom\SPObjectModelTypeCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPObjectModelTypeNode.cs" />
+    <Compile Include="Model\Custom\SPOutboundMailServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPOutboundMailServiceNode.cs" />
+    <Compile Include="Model\Custom\SPPeoplePickerSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPPerformanceMonitorCreationDataNode.cs" />
+    <Compile Include="Model\Custom\SPPermissionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPPermissionNode.cs" />
+    <Compile Include="Model\Custom\SPPersistedFileNode.cs" />
+    <Compile Include="Model\Custom\SPPersistedObjectNode.cs" />
+    <Compile Include="Model\Custom\SPPolicyCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPPolicyNode.cs" />
+    <Compile Include="Model\Custom\SPPolicyRoleBindingCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPPolicyRoleCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPPolicyRoleNode.cs" />
+    <Compile Include="Model\Custom\SPPrefixCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPPrefixNode.cs" />
+    <Compile Include="Model\Custom\SPPrincipalNode.cs" />
+    <Compile Include="Model\Custom\SPProcessAccountNode.cs" />
+    <Compile Include="Model\Custom\SPProcessIdentityNode.cs" />
+    <Compile Include="Model\Custom\SPPropertyBagCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPQueryNode.cs" />
+    <Compile Include="Model\Custom\SPQueryUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPQuotaNode.cs" />
+    <Compile Include="Model\Custom\SPQuotaTemplateCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPQuotaTemplateNode.cs" />
+    <Compile Include="Model\Custom\SPRatingUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPRecycleBinItemCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPRecycleBinItemCollectionPositionNode.cs" />
+    <Compile Include="Model\Custom\SPRecycleBinItemNode.cs" />
+    <Compile Include="Model\Custom\SPRegionalSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPRemoteBlobStorageSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPRequestUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPResourceMeasureCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPResourceMeasureNode.cs" />
+    <Compile Include="Model\Custom\SPRestrictedObjectModelNode.cs" />
+    <Compile Include="Model\Custom\SPReusableAclNode.cs" />
+    <Compile Include="Model\Custom\SPRoleAssignmentCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPRoleAssignmentNode.cs" />
+    <Compile Include="Model\Custom\SPRoleCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPRoleDefinitionBindingCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPRoleDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPRoleDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPRoleNode.cs" />
+    <Compile Include="Model\Custom\SPRunningJobCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPRunningJobNode.cs" />
+    <Compile Include="Model\Custom\SPScheduleNode.cs" />
+    <Compile Include="Model\Custom\SPSearchDataAccessServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPSearchDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SPSearchServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPSearchServiceNode.cs" />
+    <Compile Include="Model\Custom\SPSecondScheduleNode.cs" />
+    <Compile Include="Model\Custom\SPSecurableObjectNode.cs" />
+    <Compile Include="Model\Custom\SPSecurityTokenServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPSecurityTokenServiceNode.cs" />
+    <Compile Include="Model\Custom\SPServerCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPServerNode.cs" />
+    <Compile Include="Model\Custom\SPServiceApplicationCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPServiceApplicationNode.cs" />
+    <Compile Include="Model\Custom\SPServiceApplicationProxyCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPServiceApplicationProxyGroupCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPServiceApplicationProxyGroupNode.cs" />
+    <Compile Include="Model\Custom\SPServiceApplicationProxyNode.cs" />
+    <Compile Include="Model\Custom\SPServiceCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPServiceInstanceCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPServiceInstanceDependencyCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPServiceNode.cs" />
+    <Compile Include="Model\Custom\SPServiceProxyCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\SPSiteCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPSiteCollectionPropertyCacheNode.cs" />
+    <Compile Include="Model\Custom\SPSiteCreationProviderNode.cs" />
+    <Compile Include="Model\Custom\SPSiteInventoryUsageProviderNode.cs" />
+    <Compile Include="Model\Custom\SPSiteLookupProviderNode.cs" />
+    <Compile Include="Model\Custom\SPSiteNode.cs" />
+    <Compile Include="Model\Custom\SPSiteSubscriptionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPSiteSubscriptionIdentifierNode.cs" />
+    <Compile Include="Model\Custom\SPSiteSubscriptionNode.cs" />
+    <Compile Include="Model\Custom\SPSiteSubscriptionSiteCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPSolutionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPSolutionLanguagePackCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPSolutionLanguagePackNode.cs" />
+    <Compile Include="Model\Custom\SPSolutionNode.cs" />
+    <Compile Include="Model\Custom\SPSolutionValidatorCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPSolutionValidatorNode.cs" />
+    <Compile Include="Model\Custom\SPSubscriptionSettingsServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPSubscriptionSettingsServiceNode.cs" />
+    <Compile Include="Model\Custom\SPSubscriptionSettingsServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\SPTimerJobUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPTimerServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPTimerServiceNode.cs" />
+    <Compile Include="Model\Custom\SPTimeZoneCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPTimeZoneNode.cs" />
+    <Compile Include="Model\Custom\SPTopologyWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPTopologyWebServiceNode.cs" />
+    <Compile Include="Model\Custom\SPTopologyWebServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\SPTracingServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPTracingServiceNode.cs" />
+    <Compile Include="Model\Custom\SPUpgradeContextNode.cs" />
+    <Compile Include="Model\Custom\SPUsageDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SPUsageDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPUsageIdentityTableNode.cs" />
+    <Compile Include="Model\Custom\SPUsageManagerNode.cs" />
+    <Compile Include="Model\Custom\SPUsageReceiverDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPUsageReceiverDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPUsageServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPUsageServiceNode.cs" />
+    <Compile Include="Model\Custom\SPUsageServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\SPUsageSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPUserCodeExecutionTierCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPUserCodeExecutionTierNode.cs" />
+    <Compile Include="Model\Custom\SPUserCodePopularityLoadBalancerProviderNode.cs" />
+    <Compile Include="Model\Custom\SPUserCodeServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPUserCodeServiceNode.cs" />
+    <Compile Include="Model\Custom\SPUserCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPUserCustomActionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPUserCustomActionNode.cs" />
+    <Compile Include="Model\Custom\SPUserNode.cs" />
+    <Compile Include="Model\Custom\SPUserResourceCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPUserResourceNode.cs" />
+    <Compile Include="Model\Custom\SPUserSolutionCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPUserSolutionNode.cs" />
+    <Compile Include="Model\Custom\SPUserStorageCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPUserStorageNode.cs" />
+    <Compile Include="Model\Custom\SPUserTokenNode.cs" />
+    <Compile Include="Model\Custom\SPViewCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPViewContextNode.cs" />
+    <Compile Include="Model\Custom\SPViewFieldCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPViewNode.cs" />
+    <Compile Include="Model\Custom\SPViewStyleCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPViewStyleNode.cs" />
+    <Compile Include="Model\Custom\SPVirtualServerConfigNode.cs" />
+    <Compile Include="Model\Custom\SPVirtualServerNode.cs" />
+    <Compile Include="Model\Custom\SPWebApplicationCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPWebApplicationNode.cs" />
+    <Compile Include="Model\Custom\SPWebCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPWebFrontEndDiagnosticsPerformanceCounterProviderNode.cs" />
+    <Compile Include="Model\Custom\SPWebNode.cs" />
+    <Compile Include="Model\Custom\SPWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPWebServiceNode.cs" />
+    <Compile Include="Model\Custom\SPWebWorkflowAssociationCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPWindowsAuthenticationProviderNode.cs" />
+    <Compile Include="Model\Custom\SPWindowsTokenServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPWindowsTokenServiceNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowAssociationCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowAssociationNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowFilterNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowManagerNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowModificationCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowModificationNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowTaskCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowTaskNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowTemplateCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowTemplateNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowTimerServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPWorkflowTimerServiceNode.cs" />
+    <Compile Include="Model\Custom\SPXmlDocumentCollectionNode.cs" />
+    <Compile Include="Model\Custom\StateDatabaseNode.cs" />
+    <Compile Include="Model\Custom\StateServiceNode.cs" />
+    <Compile Include="Model\Custom\StateServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\StringNode.cs" />
+    <Compile Include="Model\Custom\SynchronizationDatabaseNode.cs" />
+    <Compile Include="Model\Custom\TemplateContainerNode.cs" />
+    <Compile Include="Model\Custom\UserProfileServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\UserProfileServiceNode.cs" />
+    <Compile Include="Model\Custom\UserProfileServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\VisioGraphicsServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\VisioGraphicsServiceNode.cs" />
+    <Compile Include="Model\Custom\VisioGraphicsServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\WebAnalyticsServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\WebAnalyticsServiceNode.cs" />
+    <Compile Include="Model\Custom\WebAnalyticsServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\WebAnalyticsStagerDatabaseNode.cs" />
+    <Compile Include="Model\Custom\WebAnalyticsWarehouseDatabaseNode.cs" />
+    <Compile Include="Model\Custom\WebAnalyticsWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\WebAnalyticsWebServiceNode.cs" />
+    <Compile Include="Model\Custom\WordServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\WordServiceNode.cs" />
+    <Compile Include="Model\Custom\WordServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\AccessServerWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\AccessServerWebServiceNode.cs" />
+    <Compile Include="Model\Generated\AccessServerWebServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\ApplicationRegistryServiceDatabaseNode.cs" />
+    <Compile Include="Model\Generated\ApplicationRegistryServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\ApplicationRegistryServiceNode.cs" />
+    <Compile Include="Model\Generated\ApplicationRegistryServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\BaseFieldControlNode.cs" />
+    <Compile Include="Model\Generated\BdcServiceApplicationProxyNode.cs" />
+    <Compile Include="Model\Generated\BdcServiceDatabaseNode.cs" />
+    <Compile Include="Model\Generated\BdcServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\BdcServiceNode.cs" />
+    <Compile Include="Model\Generated\BdcServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\BIMonitoringServiceDatabaseNode.cs" />
+    <Compile Include="Model\Generated\BIMonitoringServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\BIMonitoringServiceNode.cs" />
+    <Compile Include="Model\Generated\BIMonitoringServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\DataConnectionFileCollectionNode.cs" />
+    <Compile Include="Model\Generated\DataConnectionFileNode.cs" />
+    <Compile Include="Model\Generated\DiagnosticsServiceNode.cs" />
+    <Compile Include="Model\Generated\ExcelServerWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\ExcelServerWebServiceNode.cs" />
+    <Compile Include="Model\Generated\ExcelServerWebServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\ExemptUserAgentCollectionNode.cs" />
+    <Compile Include="Model\Generated\ExemptUserAgentNode.cs" />
+    <Compile Include="Model\Generated\FormsServiceNode.cs" />
+    <Compile Include="Model\Generated\FormTemplateCollectionNode.cs" />
+    <Compile Include="Model\Generated\FormTemplateNode.cs" />
+    <Compile Include="Model\Generated\GetCachedFieldNode.cs" />
+    <Compile Include="Model\Generated\GuidNode.cs" />
+    <Compile Include="Model\Generated\LauncherServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\LauncherServiceNode.cs" />
+    <Compile Include="Model\Generated\LoadBalancerServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\LoadBalancerServiceNode.cs" />
+    <Compile Include="Model\Generated\MetadataWebServiceDatabaseNode.cs" />
+    <Compile Include="Model\Generated\MetadataWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\MetadataWebServiceNode.cs" />
+    <Compile Include="Model\Generated\MetadataWebServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\MmsSenderInfoNode.cs" />
+    <Compile Include="Model\Generated\NotesWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\NotesWebServiceNode.cs" />
+    <Compile Include="Model\Generated\NotesWebServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\OfficeServerServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\OfficeServerServiceNode.cs" />
+    <Compile Include="Model\Generated\PolicyConfigServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\PolicyConfigServiceNode.cs" />
+    <Compile Include="Model\Generated\PortalServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\PortalServiceNode.cs" />
+    <Compile Include="Model\Generated\ProfileDatabaseNode.cs" />
+    <Compile Include="Model\Generated\ProfileSynchronizationServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\ProfileSynchronizationServiceNode.cs" />
+    <Compile Include="Model\Generated\QueueDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SearchAdminDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SearchAdminWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SearchAdminWebServiceNode.cs" />
+    <Compile Include="Model\Generated\SearchDataAccessServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SearchGathererDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SearchPropertyStoreDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SearchQueryAndSiteSettingsServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SearchQueryAndSiteSettingsServiceNode.cs" />
+    <Compile Include="Model\Generated\SearchQueryAndSiteSettingsServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\SearchServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SearchServiceNode.cs" />
+    <Compile Include="Model\Generated\SearchServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\SecureStoreServiceDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SecureStoreServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SecureStoreServiceNode.cs" />
+    <Compile Include="Model\Generated\SecureStoreServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\SessionStateDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SessionStateServiceApplicationNode.cs" />
+    <Compile Include="Model\Generated\SessionStateServiceNode.cs" />
+    <Compile Include="Model\Generated\SetCachedFieldNode.cs" />
+    <Compile Include="Model\Generated\SiteHitRuleNode.cs" />
+    <Compile Include="Model\Generated\SiteHitRulesCollectionNode.cs" />
+    <Compile Include="Model\Generated\SmsSenderInfoNode.cs" />
+    <Compile Include="Model\Generated\SocialDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SPActionLinkNode.cs" />
+    <Compile Include="Model\Generated\SPAdministrationLinkNode.cs" />
+    <Compile Include="Model\Generated\SPAdministrationServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPAdministrationServiceNode.cs" />
+    <Compile Include="Model\Generated\SPAdministrationWebApplicationNode.cs" />
+    <Compile Include="Model\Generated\SPAlertCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPAlertTemplateNode.cs" />
+    <Compile Include="Model\Generated\SPAlternateUrlCollectionManagerNode.cs" />
+    <Compile Include="Model\Generated\SPAlternateUrlCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPAlternateUrlNode.cs" />
+    <Compile Include="Model\Generated\SPAntivirusSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPApplicationPoolCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPApplicationPoolNode.cs" />
+    <Compile Include="Model\Generated\SPAttachmentCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPAuditNode.cs" />
+    <Compile Include="Model\Generated\SPBlockedSolutionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPBlockedSolutionNode.cs" />
+    <Compile Include="Model\Generated\SPChangeTokenNode.cs" />
+    <Compile Include="Model\Generated\SPClickthroughUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPClientCallableSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPClientRequestServiceSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPConfigurationDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SPContentDatabaseCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPContentDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SPContentTypeCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPContentTypeNode.cs" />
+    <Compile Include="Model\Generated\SPContextNode.cs" />
+    <Compile Include="Model\Generated\SPContextPageInfoNode.cs" />
+    <Compile Include="Model\Generated\SPCopyDestinationCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPCopyFieldMaskNode.cs" />
+    <Compile Include="Model\Generated\SPDatabaseCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SPDatabaseServerDiagnosticsPerformanceCounterProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDatabaseServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPDatabaseServiceNode.cs" />
+    <Compile Include="Model\Generated\SPDatabaseSnapshotCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPDatabaseSnapshotNode.cs" />
+    <Compile Include="Model\Generated\SPDataRetrievalProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDataRetrievalServicesSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPDefaultSolutionValidatorNode.cs" />
+    <Compile Include="Model\Generated\SPDeveloperDashboardSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsBlockingQueryProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsEventLogProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsProviderCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsServiceNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsSqlDmvProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsSqlMemoryProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsULSProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDistributionGroupJobDataNode.cs" />
+    <Compile Include="Model\Generated\SPDocTemplateCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPDocTemplateNode.cs" />
+    <Compile Include="Model\Generated\SPDocumentConverterCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPDocumentConverterNode.cs" />
+    <Compile Include="Model\Generated\SPDocumentLibraryNode.cs" />
+    <Compile Include="Model\Generated\SPEventReceiverDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPExportUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPExternalApplicationProviderNode.cs" />
+    <Compile Include="Model\Generated\SPExternalApplicationSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPExternalBinaryIdCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPExternalBinaryIdNode.cs" />
+    <Compile Include="Model\Generated\SPFarmNode.cs" />
+    <Compile Include="Model\Generated\SPFeatureCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFeatureDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFeatureDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPFeatureDependencyCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFeatureNode.cs" />
+    <Compile Include="Model\Generated\SPFeaturePropertyCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFeatureUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPFieldCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFieldIndexCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFieldLinkCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFieldLinkNode.cs" />
+    <Compile Include="Model\Generated\SPFieldNode.cs" />
+    <Compile Include="Model\Generated\SPFieldTypeDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFieldTypeDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPFieldUserValueNode.cs" />
+    <Compile Include="Model\Generated\SPFileCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFileExtensionsCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFileNode.cs" />
+    <Compile Include="Model\Generated\SPFileVersionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFileVersionNode.cs" />
+    <Compile Include="Model\Generated\SPFolderCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFolderNode.cs" />
+    <Compile Include="Model\Generated\SPFormCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFormContextNode.cs" />
+    <Compile Include="Model\Generated\SPFormDigestSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPFormNode.cs" />
+    <Compile Include="Model\Generated\SPGroupCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPGroupNode.cs" />
+    <Compile Include="Model\Generated\SPHealthReportsListNode.cs" />
+    <Compile Include="Model\Generated\SPHealthRulesListNode.cs" />
+    <Compile Include="Model\Generated\SPHealthScoreCalculatorNode.cs" />
+    <Compile Include="Model\Generated\SPHourlyScheduleNode.cs" />
+    <Compile Include="Model\Generated\SPHtmlTransformSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPHttpThrottleSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPHttpThrottlingMonitorsNode.cs" />
+    <Compile Include="Model\Generated\SPImportUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPIncomingEmailServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPIncomingEmailServiceNode.cs" />
+    <Compile Include="Model\Generated\SPIrmSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPItemNode.cs" />
+    <Compile Include="Model\Generated\SPJobDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPJobDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPJobHistoryEntriesNode.cs" />
+    <Compile Include="Model\Generated\SPJobHistoryNode.cs" />
+    <Compile Include="Model\Generated\SPLanguageCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPLanguageNode.cs" />
+    <Compile Include="Model\Generated\SPLinkCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPListCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPListDataSourceNode.cs" />
+    <Compile Include="Model\Generated\SPListItemCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPListItemNode.cs" />
+    <Compile Include="Model\Generated\SPListItemVersionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPListItemVersionNode.cs" />
+    <Compile Include="Model\Generated\SPListNode.cs" />
+    <Compile Include="Model\Generated\SPListTemplateCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPListTemplateNode.cs" />
+    <Compile Include="Model\Generated\SPListWorkflowAssociationCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPLocaleCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPManagedAccountNode.cs" />
+    <Compile Include="Model\Generated\SPMemberNode.cs" />
+    <Compile Include="Model\Generated\SPMimeMappingCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPMimeMappingNode.cs" />
+    <Compile Include="Model\Generated\SPMimeTypeSetNode.cs" />
+    <Compile Include="Model\Generated\SPMinuteScheduleNode.cs" />
+    <Compile Include="Model\Generated\SPMobileBaseFieldControlNode.cs" />
+    <Compile Include="Model\Generated\SPMobileContextNode.cs" />
+    <Compile Include="Model\Generated\SPMobileMessageServiceProviderNode.cs" />
+    <Compile Include="Model\Generated\SPMobileMessageUserInfoNode.cs" />
+    <Compile Include="Model\Generated\SPMobileMessagingAccountNode.cs" />
+    <Compile Include="Model\Generated\SPModerationInformationNode.cs" />
+    <Compile Include="Model\Generated\SPModuleCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPModuleNode.cs" />
+    <Compile Include="Model\Generated\SPModulePropertyBagNode.cs" />
+    <Compile Include="Model\Generated\SPNavigationNode.cs" />
+    <Compile Include="Model\Generated\SPNavigationNodeCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPNavigationNodeNode.cs" />
+    <Compile Include="Model\Generated\SPObjectModelTypeCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPObjectModelTypeNode.cs" />
+    <Compile Include="Model\Generated\SPOutboundMailServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPOutboundMailServiceNode.cs" />
+    <Compile Include="Model\Generated\SPPeoplePickerSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPPerformanceMonitorCreationDataNode.cs" />
+    <Compile Include="Model\Generated\SPPermissionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPPersistedFileNode.cs" />
+    <Compile Include="Model\Generated\SPPersistedObjectNode.cs" />
+    <Compile Include="Model\Generated\SPPolicyCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPPolicyRoleCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPPrefixCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPPrefixNode.cs" />
+    <Compile Include="Model\Generated\SPPrincipalNode.cs" />
+    <Compile Include="Model\Generated\SPProcessAccountNode.cs" />
+    <Compile Include="Model\Generated\SPProcessIdentityNode.cs" />
+    <Compile Include="Model\Generated\SPPropertyBagCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPQueryUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPQuotaNode.cs" />
+    <Compile Include="Model\Generated\SPQuotaTemplateCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPRatingUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPRecycleBinItemCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPRecycleBinItemNode.cs" />
+    <Compile Include="Model\Generated\SPRegionalSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPRemoteBlobStorageSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPRequestUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPResourceMeasureCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPResourceMeasureNode.cs" />
+    <Compile Include="Model\Generated\SPRestrictedObjectModelNode.cs" />
+    <Compile Include="Model\Generated\SPReusableAclNode.cs" />
+    <Compile Include="Model\Generated\SPRoleAssignmentCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPRoleAssignmentNode.cs" />
+    <Compile Include="Model\Generated\SPRoleCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPRoleDefinitionBindingCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPRoleDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPRoleDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPRunningJobCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPScheduleNode.cs" />
+    <Compile Include="Model\Generated\SPSearchDataAccessServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPSearchDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SPSearchServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPSearchServiceNode.cs" />
+    <Compile Include="Model\Generated\SPSecondScheduleNode.cs" />
+    <Compile Include="Model\Generated\SPSecurableObjectNode.cs" />
+    <Compile Include="Model\Generated\SPSecurityTokenServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPSecurityTokenServiceNode.cs" />
+    <Compile Include="Model\Generated\SPServerCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPServerNode.cs" />
+    <Compile Include="Model\Generated\SPServiceApplicationCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPServiceApplicationNode.cs" />
+    <Compile Include="Model\Generated\SPServiceApplicationProxyCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPServiceApplicationProxyGroupCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPServiceApplicationProxyGroupNode.cs" />
+    <Compile Include="Model\Generated\SPServiceApplicationProxyNode.cs" />
+    <Compile Include="Model\Generated\SPServiceCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPServiceInstanceCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPServiceInstanceDependencyCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPServiceNode.cs" />
+    <Compile Include="Model\Generated\SPServiceProxyCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\SPSiteCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPSiteCollectionPropertyCacheNode.cs" />
+    <Compile Include="Model\Generated\SPSiteCreationProviderNode.cs" />
+    <Compile Include="Model\Generated\SPSiteInventoryUsageProviderNode.cs" />
+    <Compile Include="Model\Generated\SPSiteLookupProviderNode.cs" />
+    <Compile Include="Model\Generated\SPSiteNode.cs" />
+    <Compile Include="Model\Generated\SPSiteSubscriptionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPSiteSubscriptionIdentifierNode.cs" />
+    <Compile Include="Model\Generated\SPSiteSubscriptionNode.cs" />
+    <Compile Include="Model\Generated\SPSiteSubscriptionSiteCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPSolutionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPSolutionLanguagePackCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPSolutionLanguagePackNode.cs" />
+    <Compile Include="Model\Generated\SPSolutionNode.cs" />
+    <Compile Include="Model\Generated\SPSolutionValidatorCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPSolutionValidatorNode.cs" />
+    <Compile Include="Model\Generated\SPSubscriptionSettingsServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPSubscriptionSettingsServiceNode.cs" />
+    <Compile Include="Model\Generated\SPSubscriptionSettingsServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\SPTimerJobUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPTimerServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPTimerServiceNode.cs" />
+    <Compile Include="Model\Generated\SPTimeZoneCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPTimeZoneNode.cs" />
+    <Compile Include="Model\Generated\SPTopologyWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPTopologyWebServiceNode.cs" />
+    <Compile Include="Model\Generated\SPTopologyWebServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\SPTracingServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPTracingServiceNode.cs" />
+    <Compile Include="Model\Generated\SPUpgradeContextNode.cs" />
+    <Compile Include="Model\Generated\SPUsageDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SPUsageDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPUsageIdentityTableNode.cs" />
+    <Compile Include="Model\Generated\SPUsageManagerNode.cs" />
+    <Compile Include="Model\Generated\SPUsageReceiverDefinitionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPUsageReceiverDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPUsageServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPUsageServiceNode.cs" />
+    <Compile Include="Model\Generated\SPUsageServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\SPUsageSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPUserCodeExecutionTierCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPUserCodeExecutionTierNode.cs" />
+    <Compile Include="Model\Generated\SPUserCodePopularityLoadBalancerProviderNode.cs" />
+    <Compile Include="Model\Generated\SPUserCodeServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPUserCodeServiceNode.cs" />
+    <Compile Include="Model\Generated\SPUserCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPUserCustomActionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPUserCustomActionNode.cs" />
+    <Compile Include="Model\Generated\SPUserNode.cs" />
+    <Compile Include="Model\Generated\SPUserResourceCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPUserResourceNode.cs" />
+    <Compile Include="Model\Generated\SPUserSolutionCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPUserStorageCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPUserTokenNode.cs" />
+    <Compile Include="Model\Generated\SPViewCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPViewContextNode.cs" />
+    <Compile Include="Model\Generated\SPViewFieldCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPViewNode.cs" />
+    <Compile Include="Model\Generated\SPViewStyleCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPViewStyleNode.cs" />
+    <Compile Include="Model\Generated\SPWebApplicationCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPWebApplicationNode.cs" />
+    <Compile Include="Model\Generated\SPWebCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPWebFrontEndDiagnosticsPerformanceCounterProviderNode.cs" />
+    <Compile Include="Model\Generated\SPWebNode.cs" />
+    <Compile Include="Model\Generated\SPWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPWebServiceNode.cs" />
+    <Compile Include="Model\Generated\SPWebWorkflowAssociationCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPWindowsTokenServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPWindowsTokenServiceNode.cs" />
+    <Compile Include="Model\Generated\SPWorkflowAssociationCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPWorkflowAssociationNode.cs" />
+    <Compile Include="Model\Generated\SPWorkflowCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPWorkflowManagerNode.cs" />
+    <Compile Include="Model\Generated\SPWorkflowTaskCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPWorkflowTemplateCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPWorkflowTemplateNode.cs" />
+    <Compile Include="Model\Generated\SPWorkflowTimerServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPWorkflowTimerServiceNode.cs" />
+    <Compile Include="Model\Generated\SPXmlDocumentCollectionNode.cs" />
+    <Compile Include="Model\Generated\StateDatabaseNode.cs" />
+    <Compile Include="Model\Generated\StateServiceNode.cs" />
+    <Compile Include="Model\Generated\StateServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\StringNode.cs" />
+    <Compile Include="Model\Generated\SynchronizationDatabaseNode.cs" />
+    <Compile Include="Model\Generated\TemplateContainerNode.cs" />
+    <Compile Include="Model\Generated\UserProfileServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\UserProfileServiceNode.cs" />
+    <Compile Include="Model\Generated\UserProfileServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\VisioGraphicsServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\VisioGraphicsServiceNode.cs" />
+    <Compile Include="Model\Generated\VisioGraphicsServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\WebAnalyticsServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\WebAnalyticsServiceNode.cs" />
+    <Compile Include="Model\Generated\WebAnalyticsServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\WebAnalyticsStagerDatabaseNode.cs" />
+    <Compile Include="Model\Generated\WebAnalyticsWarehouseDatabaseNode.cs" />
+    <Compile Include="Model\Generated\WebAnalyticsWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\WebAnalyticsWebServiceNode.cs" />
+    <Compile Include="Model\Generated\WordServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\WordServiceNode.cs" />
+    <Compile Include="Model\Generated\WordServiceProxyNode.cs" />
+    <Compile Include="Model\SPNode.cs" />
+    <Compile Include="Model\SPNodeCollection.cs" />
+    <Compile Include="Model\ISPNode.cs" />
+    <Compile Include="Model\INode.cs" />
+    <Compile Include="Model\SharedTypes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPNodeProvider.cs" />
+    <Compile Include="Validation\AdministrativeServiceValidator.cs" />
+    <Compile Include="Validation\AdminRightsValidator.cs" />
+    <Compile Include="Validation\SPFInstalledValidator.cs" />
+    <Compile Include="Validation\SPSInstalledValidator.cs" />
+    <Compile Include="Validation\TimerServiceValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SPM2.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\MEF\ComponentModel\MEF35.csproj">
+      <Project>{1BBA5101-D4F0-48B8-A5D6-7B23A099DCE3}</Project>
+      <Name>MEF35</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SPM2.Framework\SPM2.Framework.csproj">
+      <Project>{5DE0D29F-DE15-4E15-9E89-3A873D849C40}</Project>
+      <Name>SPM2.Framework</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\AppPool.gif" />
+    <Content Include="Resources\Images\copy.gif" />
+    <Content Include="Resources\Images\cut.gif" />
+    <Content Include="Resources\Images\delete.gif" />
+    <Content Include="Resources\Images\Jobs16.gif" />
+    <Content Include="Resources\Images\page.gif" />
+    <Content Include="Resources\Images\paste.gif" />
+    <Content Include="Resources\Images\save.gif" />
+    <Content Include="Resources\Images\saveall.gif" />
+    <Content Include="Resources\Images\undo.gif" />
+    <Content Include="Resources\Images\WebAppPool.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\actionssettings.gif" />
+    <Resource Include="Resources\Images\cancel.gif" />
+    <Resource Include="Resources\Images\dbconnection.gif" />
+    <Resource Include="Resources\Images\GlobalServer.gif" />
+    <Resource Include="Resources\Images\icon-property.gif" />
+    <Resource Include="Resources\Images\Internet.gif" />
+    <Resource Include="Resources\Images\server.gif" />
+    <Resource Include="Resources\Images\ServerConfig.gif" />
+    <Resource Include="Resources\Images\system.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

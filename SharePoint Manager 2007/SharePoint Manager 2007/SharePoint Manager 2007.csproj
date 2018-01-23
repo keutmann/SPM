@@ -1,0 +1,353 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{414997CA-AC7E-4D66-9939-25FD990DA4F9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Keutmann.SharePointManager</RootNamespace>
+    <AssemblyName>SharePoint Manager 2007</AssemblyName>
+    <StartupObject>Keutmann.SharePointManager.Program</StartupObject>
+    <ApplicationIcon>CENADMIN.ICO</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>Properties\spm2007key.pfx</AssemblyOriginatorKeyFile>
+    <ManifestCertificateThumbprint>DF939C2E4F3AA7AC38663DB3939160E25796126D</ManifestCertificateThumbprint>
+    <ManifestKeyFile>SharePoint Manager 2007_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Temp\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.keutmann.dk/sharepointblog/</InstallUrl>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft SQL Server\90\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft SQL Server\90\SDK\Assemblies\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\FileListView\LoadWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FileListView\ListViewItemComparer.cs" />
+    <Compile Include="Components\FileListView\FileListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\FileListView\FileListView.Designer.cs">
+      <DependentUpon>FileListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\FileListView\LoadWorkerParameters.cs" />
+    <Compile Include="Components\FileListView\SPMListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\FileListView\SPMListView.Designer.cs">
+      <DependentUpon>SPMListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Menu\MenuStripRefresh.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\SPMTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\TabDataGridViewPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\TabBrowserPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\TabPropertyPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\TabXmlPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TabControl\TabPages.cs" />
+    <Compile Include="Components\TabControl\TabTextPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TreeViewExplorer\ContentTypeCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ContentTypeNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ContentTypeUsageCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ContentTypeUsageNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ListTemplateNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ListTemplateCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\EventReceiverDefinitionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\EventReceiverDefinitionCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\GroupCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\GroupNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\RoleDefinitionCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\RoleDefinitionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WebPartNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WebPartCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\QuotaTemplateNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\QoutaTemplateCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\FormCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\FormNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ViewNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ViewCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\FeatureDefinitionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WorkflowTaskNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WorkflowTaskCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WorkflowModificationNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WorkflowModificationCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WorkflowNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WorkflowCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WorkflowAssociationNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WorkflowAssociationCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\AlertCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\AlertNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ApplicationPoolNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ApplicationPoolCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\JobDefinitionCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\JobDefinitionNode.cs" />
+    <Compile Include="Components\Menu\MenuStripStandard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TreeViewExplorer\NodeDisplayLevelType.cs" />
+    <Compile Include="Components\TreeViewExplorer\RunningJobCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\RunningJobNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\UserCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\UserNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\FieldNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\FieldCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ListItemCollectionNode.cs" />
+    <Compile Include="Components\Menu\SiteMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TreeViewExplorer\SiteCollectionNode.cs" />
+    <Compile Include="Components\Menu\SiteCollectionMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TreeViewExplorer\RecycleBinItemCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\RecycleBinNode.cs" />
+    <Compile Include="Forms\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\TreeViewExplorer\FarmNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\FeatureCollectionDefinitionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\FeatureNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\FileNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\FileVersionCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\FileVersionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ListItemNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ListItemVersionCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ListItemVersionNode.cs" />
+    <Compile Include="Components\Menu\SPMMenu.cs" />
+    <Compile Include="Components\Menu\SPMStandardMenuItems.cs" />
+    <Compile Include="Components\Menu\SPMStandardMenuStrips.cs" />
+    <Compile Include="Components\TreeViewExplorer\PropertyBagCollection.cs" />
+    <Compile Include="Components\TreeViewExplorer\PropertyCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ServerNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ServiceCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ServiceNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\SolutionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WebCollectionNode.cs" />
+    <Compile Include="Components\Menu\ContextMenuStripBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TreeViewExplorer\ExplorerNodeBase.cs" />
+    <Compile Include="Components\TreeViewExplorer\FolderNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ListCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ListNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\ServerCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\SiteNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\SolutionCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\TreeViewExplorer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\TreeViewExplorer\FeatureCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WebApplicationCollectionNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WebApplicationNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WebNode.cs" />
+    <Compile Include="Components\TreeViewExplorer\WebServiceNode.cs" />
+    <Compile Include="Forms\OpenDBConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OpenDBConnection.Designer.cs">
+      <DependentUpon>OpenDBConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Functions\ExportImport\RestoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Functions\ExportImport\RestoreForm.Designer.cs">
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\SPMClassLibrary.cs" />
+    <Compile Include="Library\SPMFarmHelper.cs" />
+    <Compile Include="Library\SPMLocalization.cs" />
+    <Compile Include="Library\SPMObjectType.cs" />
+    <Compile Include="Library\SPMReflection.cs" />
+    <Compile Include="Library\SPMRegistry.cs" />
+    <Compile Include="Library\SPMSecurity.cs" />
+    <Compile Include="Library\SPMUtility.cs" />
+    <Compile Include="Library\SPMPaths.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\TreeViewExplorer\NodeSorter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\FileListView\FileListView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FileListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\FileListView\SPMListView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SPMListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\About.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OpenDBConnection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OpenDBConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Functions\ExportImport\RestoreForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPManagerLanguage.en.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPManagerLanguage.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPManagerLanguage.nl.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPManagerLanguage.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPManagerLanguage.sv.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CENADMIN.ICO" />
+    <None Include="Resources\about.gif" />
+    <None Include="Resources\copy.gif" />
+    <None Include="Resources\cut.gif" />
+    <None Include="Resources\delete.gif" />
+    <None Include="Resources\AppPool.gif" />
+    <Content Include="Resources\Documents\License.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Documents\Readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\actionssettings.gif" />
+    <Content Include="Resources\Images\cancel.gif" />
+    <Content Include="Resources\Images\dbconnection.gif" />
+    <Content Include="Resources\Images\GlobalServer.gif" />
+    <Content Include="Resources\Images\icon-property.gif" />
+    <Content Include="Resources\Images\Internet.gif" />
+    <Content Include="Resources\Images\server.gif" />
+    <Content Include="Resources\Images\ServerConfig.gif" />
+    <Content Include="Resources\Images\system.gif" />
+    <None Include="Resources\Jobs16.gif" />
+    <None Include="Resources\WebAppPool.gif" />
+    <None Include="Resources\paste.gif" />
+    <None Include="Resources\page.gif" />
+    <None Include="Resources\refresh3.gif" />
+    <None Include="Resources\undo.gif" />
+    <None Include="Resources\saveall.gif" />
+    <None Include="Resources\save.gif" />
+    <None Include="Properties\spm2007key.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Functions\EventHandler\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<configuration>
+    <configSections>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <section name="Keutmann.SharePointManager.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+        </sectionGroup>
+    </configSections>
+    <applicationSettings>
+        <Keutmann.SharePointManager.Properties.Settings>
+            <setting name="ReadOnly" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="ShallowExpand" serializeAs="String">
+                <value>False</value>
+            </setting>
+        </Keutmann.SharePointManager.Properties.Settings>
+    </applicationSettings>
+  
+  
+  <system.diagnostics>
+    <sources>
+      <!-- This section defines the logging configuration for My.Application.Log -->
+      <source name="debug" switchName="debug">
+        <listeners>
+          <!-- add name="FileLog"/ -->
+          <add name="console"/>
+        </listeners>
+      </source>
+
+      <source name="release" switchName="release">
+        <listeners>
+          <add name="FileLog"/>
+        </listeners>
+      </source>
+
+      <source name="silent" switchName="none">
+        <listeners/>
+      </source>
+    </sources>
+
+
+    <switches>
+      <add name="debug" value="Verbose"/>
+      <add name="release" value="Warning"/>
+      <add name="none" value="Off"/>
+    </switches>
+
+
+    <!--<sharedListeners> 
+            <add name="FileLog" type="System.Diagnostics.TextWriterTraceListener"  traceOutputOptions="DateTime" initializeData="felix.log"/> 
+            <add name="console" type="System.Diagnostics.ConsoleTraceListener" initializeData="false" /> 
+        </sharedListeners>-->
+
+    <trace autoflush="false" indentsize="4">
+      <listeners>
+        <!--<add name="FileLog" type="System.Diagnostics.TextWriterTraceListener" traceOutputOptions="DateTime" initializeData="spm2.log"/>-->
+        <add name="console" type="System.Diagnostics.ConsoleTraceListener" initializeData="false"/>
+        <remove name="Default"/>
+      </listeners>
+    </trace>
+
+  </system.diagnostics>
+</configuration>

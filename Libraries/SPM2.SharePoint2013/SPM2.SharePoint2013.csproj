@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48E7192B-2165-4561-B9B0-9A1BDB492893}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPM2.SharePoint2013</RootNamespace>
+    <AssemblyName>SPM2.SharePoint2013</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug 2013\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OutputPath>bin\Release 2013\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SPM2.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU'">
+    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" Condition="'$(Configuration)|$(Platform)' == 'Debug 2013|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release 2013|AnyCPU'" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Custom\AccessServicesMonitorUsageProviderNode.cs" />
+    <Compile Include="Model\Custom\AccessServicesWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\AccessServicesWebServiceNode.cs" />
+    <Compile Include="Model\Custom\AccessServicesWebServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\AppDatabaseUsageProviderNode.cs" />
+    <Compile Include="Model\Custom\AppManagementServiceDatabaseNode.cs" />
+    <Compile Include="Model\Custom\AppManagementServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\AppManagementServiceNode.cs" />
+    <Compile Include="Model\Custom\AppManagementServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\EduUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\PowerPointConversionServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\PowerPointConversionServiceNode.cs" />
+    <Compile Include="Model\Custom\PowerPointConversionServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\ResponseTimeUsageProviderNode.cs" />
+    <Compile Include="Model\Custom\SearchAnalyticsReportingDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SearchLinksDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SearchRuntimeServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SearchRuntimeServiceNode.cs" />
+    <Compile Include="Model\Custom\SPAnalyticsUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPAppResourceTrackingSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPAppStatisticsProviderNode.cs" />
+    <Compile Include="Model\Custom\SPAppUsageProviderNode.cs" />
+    <Compile Include="Model\Custom\SPAzureAccessControlServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\SPBandwidthUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPBECWebServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\SPClientServiceActionUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPClientServiceRequestUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPCompatibilityRangeNode.cs" />
+    <Compile Include="Model\Custom\SPDailyScheduleNode.cs" />
+    <Compile Include="Model\Custom\SPDatabaseIOSqlDiagnosticsProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsConditionNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsConditionsNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsMetricsProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDiagnosticsXEventQueryDataProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDistributedCacheCallUsageProviderNode.cs" />
+    <Compile Include="Model\Custom\SPDistributedCacheServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPDistributedCacheServiceNode.cs" />
+    <Compile Include="Model\Custom\SPFileUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPFollowableListCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPFollowableListNode.cs" />
+    <Compile Include="Model\Custom\SPInformationRightsManagementSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPIOIntensiveQueryDiagnosticProviderNode.cs" />
+    <Compile Include="Model\Custom\SPLanguageSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPMarketplaceWebServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\SPMaxFileSizeDictionaryNode.cs" />
+    <Compile Include="Model\Custom\SPMicroblogUsageProviderNode.cs" />
+    <Compile Include="Model\Custom\SPPeoplePickerSearchActiveDirectoryDomainNode.cs" />
+    <Compile Include="Model\Custom\SPPushNotificationSubscriberCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPPushNotificationSubscriberNode.cs" />
+    <Compile Include="Model\Custom\SPRemoteEventServiceSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPRequestManagementServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\SPRequestManagementServiceNode.cs" />
+    <Compile Include="Model\Custom\SPRequestManagementSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPResourceTrackingRuleCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPResourceTrackingRuleNode.cs" />
+    <Compile Include="Model\Custom\SPResourceTrackingSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPRoutingMachinePoolCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPRoutingMachinePoolNode.cs" />
+    <Compile Include="Model\Custom\SPRoutingRuleCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPRoutingRuleNode.cs" />
+    <Compile Include="Model\Custom\SPScriptSafeDomainsCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPScriptSafePagesCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPServiceCallUsageProviderNode.cs" />
+    <Compile Include="Model\Custom\SPSiteSizeDiagnosticProviderNode.cs" />
+    <Compile Include="Model\Custom\SPSiteUpgradeInfoNode.cs" />
+    <Compile Include="Model\Custom\SPSiteUpgradeThrottleSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPSqlBlockingReportDiagnosticProviderNode.cs" />
+    <Compile Include="Model\Custom\SPSqlDeadlockDiagnosticProviderNode.cs" />
+    <Compile Include="Model\Custom\SPSqlExceptionsUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPSqlIoUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPSqlLatencyUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPSubscriptionSettingsDatabaseNode.cs" />
+    <Compile Include="Model\Custom\SPTaskUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPTenantLogUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPThemeInfoNode.cs" />
+    <Compile Include="Model\Custom\SPThrottlingRuleCollectionNode.cs" />
+    <Compile Include="Model\Custom\SPThrottlingRuleNode.cs" />
+    <Compile Include="Model\Custom\SPUsageDBScopeStoreNode.cs" />
+    <Compile Include="Model\Custom\SPUsageUserCodeRequestsMonitoredDataNode.cs" />
+    <Compile Include="Model\Custom\SPUsageUserCodeRequestsNode.cs" />
+    <Compile Include="Model\Custom\SPUserIdInfoNode.cs" />
+    <Compile Include="Model\Custom\SPUserProfileADImportUsageDefinitionNode.cs" />
+    <Compile Include="Model\Custom\SPUserResourceTrackingSettingsNode.cs" />
+    <Compile Include="Model\Custom\SPUserSettingsProviderNode.cs" />
+    <Compile Include="Model\Custom\StringNode.cs" />
+    <Compile Include="Model\Custom\TranslationServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\TranslationServiceNode.cs" />
+    <Compile Include="Model\Custom\TranslationServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\UserProfileUserSettingsProviderNode.cs" />
+    <Compile Include="Model\Custom\WorkflowServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\WorkflowUsageTelemetryDefinitionNode.cs" />
+    <Compile Include="Model\Custom\WorkManagementServiceInstanceNode.cs" />
+    <Compile Include="Model\Custom\WorkManagementServiceNode.cs" />
+    <Compile Include="Model\Custom\WorkManagementServiceProxyNode.cs" />
+    <Compile Include="Model\Custom\WSSSyncUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\AccessServicesMonitorUsageProviderNode.cs" />
+    <Compile Include="Model\Generated\AccessServicesWebServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\AccessServicesWebServiceNode.cs" />
+    <Compile Include="Model\Generated\AccessServicesWebServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\AppDatabaseUsageProviderNode.cs" />
+    <Compile Include="Model\Generated\AppManagementServiceDatabaseNode.cs" />
+    <Compile Include="Model\Generated\AppManagementServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\AppManagementServiceNode.cs" />
+    <Compile Include="Model\Generated\AppManagementServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\EduUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\PowerPointConversionServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\PowerPointConversionServiceNode.cs" />
+    <Compile Include="Model\Generated\PowerPointConversionServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\ResponseTimeUsageProviderNode.cs" />
+    <Compile Include="Model\Generated\SearchAnalyticsReportingDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SearchLinksDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SearchRuntimeServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SearchRuntimeServiceNode.cs" />
+    <Compile Include="Model\Generated\SPAnalyticsUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPAppResourceTrackingSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPAppStatisticsProviderNode.cs" />
+    <Compile Include="Model\Generated\SPAppUsageProviderNode.cs" />
+    <Compile Include="Model\Generated\SPAzureAccessControlServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\SPBandwidthUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPBECWebServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\SPClientServiceActionUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPClientServiceRequestUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPCompatibilityRangeNode.cs" />
+    <Compile Include="Model\Generated\SPDailyScheduleNode.cs" />
+    <Compile Include="Model\Generated\SPDatabaseIOSqlDiagnosticsProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsConditionNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsConditionsNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsMetricsProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDiagnosticsXEventQueryDataProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDistributedCacheCallUsageProviderNode.cs" />
+    <Compile Include="Model\Generated\SPDistributedCacheServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPDistributedCacheServiceNode.cs" />
+    <Compile Include="Model\Generated\SPFileUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPFollowableListCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPFollowableListNode.cs" />
+    <Compile Include="Model\Generated\SPInformationRightsManagementSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPIOIntensiveQueryDiagnosticProviderNode.cs" />
+    <Compile Include="Model\Generated\SPLanguageSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPMarketplaceWebServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\SPMaxFileSizeDictionaryNode.cs" />
+    <Compile Include="Model\Generated\SPMicroblogUsageProviderNode.cs" />
+    <Compile Include="Model\Generated\SPPeoplePickerSearchActiveDirectoryDomainNode.cs" />
+    <Compile Include="Model\Generated\SPPushNotificationSubscriberCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPPushNotificationSubscriberNode.cs" />
+    <Compile Include="Model\Generated\SPRemoteEventServiceSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPRequestManagementServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\SPRequestManagementServiceNode.cs" />
+    <Compile Include="Model\Generated\SPRequestManagementSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPResourceTrackingRuleCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPResourceTrackingRuleNode.cs" />
+    <Compile Include="Model\Generated\SPResourceTrackingSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPRoutingMachinePoolCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPRoutingMachinePoolNode.cs" />
+    <Compile Include="Model\Generated\SPRoutingRuleCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPRoutingRuleNode.cs" />
+    <Compile Include="Model\Generated\SPScriptSafeDomainsCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPScriptSafePagesCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPServiceCallUsageProviderNode.cs" />
+    <Compile Include="Model\Generated\SPSiteSizeDiagnosticProviderNode.cs" />
+    <Compile Include="Model\Generated\SPSiteUpgradeInfoNode.cs" />
+    <Compile Include="Model\Generated\SPSiteUpgradeThrottleSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPSqlBlockingReportDiagnosticProviderNode.cs" />
+    <Compile Include="Model\Generated\SPSqlDeadlockDiagnosticProviderNode.cs" />
+    <Compile Include="Model\Generated\SPSqlExceptionsUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPSqlIoUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPSqlLatencyUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPSubscriptionSettingsDatabaseNode.cs" />
+    <Compile Include="Model\Generated\SPTaskUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPTenantLogUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPThemeInfoNode.cs" />
+    <Compile Include="Model\Generated\SPThrottlingRuleCollectionNode.cs" />
+    <Compile Include="Model\Generated\SPThrottlingRuleNode.cs" />
+    <Compile Include="Model\Generated\SPUsageDBScopeStoreNode.cs" />
+    <Compile Include="Model\Generated\SPUsageUserCodeRequestsMonitoredDataNode.cs" />
+    <Compile Include="Model\Generated\SPUsageUserCodeRequestsNode.cs" />
+    <Compile Include="Model\Generated\SPUserIdInfoNode.cs" />
+    <Compile Include="Model\Generated\SPUserProfileADImportUsageDefinitionNode.cs" />
+    <Compile Include="Model\Generated\SPUserResourceTrackingSettingsNode.cs" />
+    <Compile Include="Model\Generated\SPUserSettingsProviderNode.cs" />
+    <Compile Include="Model\Generated\StringNode.cs" />
+    <Compile Include="Model\Generated\TranslationServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\TranslationServiceNode.cs" />
+    <Compile Include="Model\Generated\TranslationServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\UserProfileUserSettingsProviderNode.cs" />
+    <Compile Include="Model\Generated\WorkflowServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\WorkflowUsageTelemetryDefinitionNode.cs" />
+    <Compile Include="Model\Generated\WorkManagementServiceInstanceNode.cs" />
+    <Compile Include="Model\Generated\WorkManagementServiceNode.cs" />
+    <Compile Include="Model\Generated\WorkManagementServiceProxyNode.cs" />
+    <Compile Include="Model\Generated\WSSSyncUsageDefinitionNode.cs" />
+    <Compile Include="Model\Icons.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SPM2.Framework\SPM2.Framework.csproj">
+      <Project>{5de0d29f-de15-4e15-9e89-3a873d849c40}</Project>
+      <Name>SPM2.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SPM2.SharePoint\SPM2.SharePoint2010.csproj">
+      <Project>{ce144460-64ce-4fb5-a25e-25b7bb028d16}</Project>
+      <Name>SPM2.SharePoint2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SPM2.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

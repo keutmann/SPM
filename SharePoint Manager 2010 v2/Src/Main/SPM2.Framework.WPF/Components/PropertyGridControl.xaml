@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="SPM2.Framework.WPF.Components.PropertyGridControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms">
+    <Grid>
+        <WindowsFormsHost  Name="propertyGridHost">
+            <forms:PropertyGrid x:Name="propertyGrid" x:FieldModifier="public" />
+        </WindowsFormsHost>
+    </Grid>
+</UserControl>

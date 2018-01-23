@@ -1,0 +1,822 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdministrationService" xml:space="preserve">
+    <value>Administration Service</value>
+    <comment>FarmNode</comment>
+  </data>
+  <data name="AlertCollection_Text" xml:space="preserve">
+    <value>Alert Collection</value>
+    <comment>AlertCollectionNode</comment>
+  </data>
+  <data name="AlertCollection_ToolTip" xml:space="preserve">
+    <value>AlertCollection</value>
+    <comment>AlertCollectionNode</comment>
+  </data>
+  <data name="ApplicationPools_Text" xml:space="preserve">
+    <value>ApplicationPools</value>
+    <comment>ApplicationPoolsCollectionNode</comment>
+  </data>
+  <data name="ApplicationPools_ToolTip" xml:space="preserve">
+    <value>SPApplicationPoolCollection</value>
+    <comment>ApplicationPoolsCollectionNode</comment>
+  </data>
+  <data name="BackupSite_Text" xml:space="preserve">
+    <value>Backup sajt</value>
+    <comment>SiteMenuStrip</comment>
+  </data>
+  <data name="Browser_Text" xml:space="preserve">
+    <value>Utforskare</value>
+    <comment>TabBrowserPage</comment>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Avbrutet</value>
+    <comment>FileListView</comment>
+  </data>
+  <data name="Cancel_All_Modifications" xml:space="preserve">
+    <value>Avbryt alla ändringar</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Changes_Saved" xml:space="preserve">
+    <value>Ändringarna är sparade</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="ContentService" xml:space="preserve">
+    <value>Content Service</value>
+    <comment>FarmNode</comment>
+  </data>
+  <data name="ContentTypes_Text" xml:space="preserve">
+    <value>ContentTypes</value>
+    <comment>ContentTypeCollectionNode</comment>
+  </data>
+  <data name="ContentTypes_ToolTip" xml:space="preserve">
+    <value>ContentType Collection</value>
+    <comment>ContentTypeCollectionNode</comment>
+  </data>
+  <data name="ContentTypeUsages_Text" xml:space="preserve">
+    <value>Usages</value>
+    <comment>ContentTypeUsageCollectionNode</comment>
+  </data>
+  <data name="ContentTypeUsages_ToolTip" xml:space="preserve">
+    <value>Visa vart denna ContentType används.</value>
+    <comment>ContentTypeUsageCollectionNode</comment>
+  </data>
+  <data name="Copy_Text" xml:space="preserve">
+    <value>Kopiera</value>
+    <comment>SPMStandardMenuItems</comment>
+  </data>
+  <data name="Cut_Text" xml:space="preserve">
+    <value>Klipp ut</value>
+    <comment>SPMStandardMenuItems</comment>
+  </data>
+  <data name="Delete_Text" xml:space="preserve">
+    <value>Ta bort</value>
+    <comment>SPMStandardMenuItems</comment>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Ladda ned</value>
+    <comment>FileNode</comment>
+  </data>
+  <data name="Do_Not_Exist" xml:space="preserve">
+    <value>finns ej.</value>
+    <comment>RestoreForm</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fel</value>
+    <comment>Program</comment>
+  </data>
+  <data name="EventReceiverDefinitionCollection_Text" xml:space="preserve">
+    <value>Event Receivers</value>
+    <comment>EventReceiverDefinitionCollectionNode</comment>
+  </data>
+  <data name="EventReceiverDefinitionCollection_ToolTip" xml:space="preserve">
+    <value>Event Receiver Definition Collection</value>
+    <comment>EventReceiverDefinitionCollectionNode</comment>
+  </data>
+  <data name="ExplorerBase_Error" xml:space="preserve">
+    <value>Ursäkta, kan inte uppdatera data.</value>
+    <comment>ExplorerNodeBase</comment>
+  </data>
+  <data name="FeatureDefinition_Install" xml:space="preserve">
+    <value>Installera</value>
+    <comment>FeatureDefinitionNode</comment>
+  </data>
+  <data name="FeatureDefinition_Message01" xml:space="preserve">
+    <value>(ej installerad)</value>
+    <comment>FeatureDefinitionNode</comment>
+  </data>
+  <data name="FeatureDefinition_Uninstall" xml:space="preserve">
+    <value>Avinstallera</value>
+    <comment>FeatureDefinitionNode</comment>
+  </data>
+  <data name="FeaturesDefinitions_Text" xml:space="preserve">
+    <value>Features Definitioner</value>
+    <comment>FeatureCollectionDefinitionNode</comment>
+  </data>
+  <data name="FeaturesDefinitions_ToolTip" xml:space="preserve">
+    <value>Features Definitioner</value>
+    <comment>FeatureCollectionDefinitionNode</comment>
+  </data>
+  <data name="Feature_Activate" xml:space="preserve">
+    <value>Aktivera</value>
+    <comment>FeatureNode</comment>
+  </data>
+  <data name="Feature_Deactivate" xml:space="preserve">
+    <value>Avaktivera</value>
+    <comment>FeatureNode</comment>
+  </data>
+  <data name="Feature_Message01" xml:space="preserve">
+    <value>Definition okänd</value>
+    <comment>FeatureNode</comment>
+  </data>
+  <data name="Feature_Message02" xml:space="preserve">
+    <value>Ingen feature definitionsobjekt angiven!</value>
+    <comment>FeatureNode</comment>
+  </data>
+  <data name="Fields_Text" xml:space="preserve">
+    <value>Fält</value>
+    <comment>FieldCollectionNode</comment>
+  </data>
+  <data name="Fields_ToolTip" xml:space="preserve">
+    <value>Fält samling</value>
+    <comment>FieldCollectionNode</comment>
+  </data>
+  <data name="File_Item" xml:space="preserve">
+    <value>Item</value>
+    <comment>FileNode</comment>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>Klar</value>
+    <comment>FileListView</comment>
+  </data>
+  <data name="Forms_Text" xml:space="preserve">
+    <value>Forms</value>
+    <comment>FormCollectionNode</comment>
+  </data>
+  <data name="Forms_ToolTip" xml:space="preserve">
+    <value>Form Collection</value>
+    <comment>FormCollectionNode</comment>
+  </data>
+  <data name="GridView_List" xml:space="preserve">
+    <value>Grid Vy</value>
+    <comment>ListNode</comment>
+  </data>
+  <data name="GridView_Text" xml:space="preserve">
+    <value>Gridvy</value>
+    <comment>TabDataGridViewPage</comment>
+  </data>
+  <data name="Include_Sub _Folders" xml:space="preserve">
+    <value>Inkludera undermappar</value>
+    <comment>FileListView</comment>
+  </data>
+  <data name="Include_Sub_Sites" xml:space="preserve">
+    <value>Inkludera undersajter</value>
+    <comment>FileListView</comment>
+  </data>
+  <data name="Interface_About" xml:space="preserve">
+    <value>Om</value>
+    <comment>AboutForm</comment>
+  </data>
+  <data name="Interface_About_Text" xml:space="preserve">
+    <value>Om</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_About_ToolTip" xml:space="preserve">
+    <value>Om SharePoint Manager 2007</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_ButtonCancel" xml:space="preserve">
+    <value>&amp;Avbryt</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_ButtonOK" xml:space="preserve">
+    <value>&amp;OK</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_Cancel_Text" xml:space="preserve">
+    <value>&amp;Avbryt</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Cancel_ToolTip" xml:space="preserve">
+    <value>Avbryt alla ändringar</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_ConnectToSP" xml:space="preserve">
+    <value>Anslut till en SharePoint konfigurationsdatabas</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_DutchLanguage" xml:space="preserve">
+    <value>Holländska</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Edit_Text" xml:space="preserve">
+    <value>&amp;Redigera</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Edit_ToolTip" xml:space="preserve">
+    <value>Redigera</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_EnglishLanguage" xml:space="preserve">
+    <value>Engelska</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_EnterConfigDB" xml:space="preserve">
+    <value>Ange konfigurationsdatabasens namn</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_EnterInfo_Text" xml:space="preserve">
+    <value>Ange uppgifter för att ansluta till konfigurationsdatabasen</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_Exit_Text" xml:space="preserve">
+    <value>&amp;Stäng</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Exit_ToolTip" xml:space="preserve">
+    <value>Stäng program</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_File_Text" xml:space="preserve">
+    <value>&amp;Fil</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_File_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Full_Text" xml:space="preserve">
+    <value>&amp;Full</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Full_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Help_Text" xml:space="preserve">
+    <value>&amp;Hjälp</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Help_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Languages_Text" xml:space="preserve">
+    <value>Språk</value>
+    <comment>MianForm</comment>
+  </data>
+  <data name="Interface_LogOn" xml:space="preserve">
+    <value>Logga på servern</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_Medium_Text" xml:space="preserve">
+    <value>Me&amp;dium</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Medium_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Minimal_Text" xml:space="preserve">
+    <value>&amp;Minimal</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Minimal_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_ObjectModel_Text" xml:space="preserve">
+    <value>Objektmodell</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_ObjectModel_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Ok" xml:space="preserve">
+    <value>OK</value>
+    <comment>AboutForm</comment>
+  </data>
+  <data name="Interface_OpenConn" xml:space="preserve">
+    <value>Öppna anslutning</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_OpenDataBaseConn_Text" xml:space="preserve">
+    <value>Öppna databaskoppling</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_OpenDataBaseConn_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_OpenDatabase_Text" xml:space="preserve">
+    <value>Öppna databas</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_OpenDatabase_ToolTip" xml:space="preserve">
+    <value>Öppna databas</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Password" xml:space="preserve">
+    <value>Lösenord</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_RefreshNode_Text" xml:space="preserve">
+    <value>Ladda om aktuell nod</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_RefreshNode_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Refresh_Text" xml:space="preserve">
+    <value>Ladda om</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Refresh_ToolTip" xml:space="preserve">
+    <value>Ladda om</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_SaveAll_Text" xml:space="preserve">
+    <value>Spara &amp;allt</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_SaveAll_ToolTip" xml:space="preserve">
+    <value>Spara ändringar till SharePoint</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Save_Text" xml:space="preserve">
+    <value>&amp;Spara</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_Save_ToolTip" xml:space="preserve">
+    <value>Spara ändringar till SharePoint</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_ServerName" xml:space="preserve">
+    <value>Servernamn</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_SpanishLanguage" xml:space="preserve">
+    <value>Spanska</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_StatusBar_Text" xml:space="preserve">
+    <value>Statusmenyn</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_StatusBar_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_TestConn" xml:space="preserve">
+    <value>&amp;Testa anslutningen</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_ToolBar_Text" xml:space="preserve">
+    <value>Verktygsmenyn</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_ToolBar_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_UserName" xml:space="preserve">
+    <value>Användarnamn:</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_UseSQLServerAuth" xml:space="preserve">
+    <value>Använd SQLServers authentisering</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_UseWindowsAuth" xml:space="preserve">
+    <value>Använd Windows authentisering</value>
+    <comment>OpenDBConnectionForm</comment>
+  </data>
+  <data name="Interface_View_Text" xml:space="preserve">
+    <value>&amp;Vy</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Interface_View_ToolTip" xml:space="preserve">
+    <value />
+    <comment>MainForm</comment>
+  </data>
+  <data name="Intervace_About_Text" xml:space="preserve">
+    <value>SharePoint Manager 2007\nVer: 0.31.7.0127\n\nUtvecklad av\nCarsten Keutmann\n\ncarsten@keutmann.dk</value>
+    <comment>AboutForm</comment>
+  </data>
+  <data name="Items_Text" xml:space="preserve">
+    <value>Items</value>
+    <comment>ListItemCollectionNode</comment>
+  </data>
+  <data name="Items_ToolTip" xml:space="preserve">
+    <value>Items</value>
+    <comment>ListItemCollectionNode</comment>
+  </data>
+  <data name="JobDefinitionCollection_ToolTip" xml:space="preserve">
+    <value>SPJobDefinitionCollection</value>
+    <comment>JobDefinitionCollectionNode</comment>
+  </data>
+  <data name="JobDefinitions_Text" xml:space="preserve">
+    <value>Jobb Definitioner</value>
+    <comment>JobDefinitionCollectionNode</comment>
+  </data>
+  <data name="ListItemCollection" xml:space="preserve">
+    <value>List Item Collection</value>
+    <comment>ListItemCollectionNode</comment>
+  </data>
+  <data name="Lists_Text" xml:space="preserve">
+    <value>Listors</value>
+    <comment>ListCollectionNode</comment>
+  </data>
+  <data name="Lists_ToolTip" xml:space="preserve">
+    <value />
+    <comment>ListCollectionNode</comment>
+  </data>
+  <data name="LoadingFieldColumns" xml:space="preserve">
+    <value>Laddar fältkolumner</value>
+    <comment>FieldCollectionNode</comment>
+  </data>
+  <data name="Paste_Text" xml:space="preserve">
+    <value>Klistra in</value>
+    <comment>SPMStandardMenuItems</comment>
+  </data>
+  <data name="Properties_Text" xml:space="preserve">
+    <value>Egenskaper</value>
+    <comment>PropertyCollectionNode</comment>
+  </data>
+  <data name="Properties_ToolTip" xml:space="preserve">
+    <value>Egenskaper</value>
+    <comment>PropertyCollectionNode</comment>
+  </data>
+  <data name="PropertyBag_Text" xml:space="preserve">
+    <value>Property Bag</value>
+    <comment>PropertyBagCollectionNode</comment>
+  </data>
+  <data name="PropertyBag_ToolTip" xml:space="preserve">
+    <value>Property Bag</value>
+    <comment>PropertyBagCollectionNode</comment>
+  </data>
+  <data name="QuotaTemplateCollection_ToolTip" xml:space="preserve">
+    <value>SPQuotaTemplateCollection</value>
+    <comment>QuotaTemplateCollectionNode</comment>
+  </data>
+  <data name="QuotaTemplatesCollection_Text" xml:space="preserve">
+    <value>QuotaTemplates</value>
+    <comment>QuotaTemplateCollectionNode</comment>
+  </data>
+  <data name="QuotaTemplate_Text" xml:space="preserve">
+    <value>Quota Template</value>
+    <comment>QuotaTemplateNode</comment>
+  </data>
+  <data name="QuotaTemplate_ToolTip" xml:space="preserve">
+    <value>SPQuotaTemplate</value>
+    <comment>QuotaTemplateNode</comment>
+  </data>
+  <data name="Recycle" xml:space="preserve">
+    <value>Recycle</value>
+    <comment>FileNode</comment>
+  </data>
+  <data name="RecycleBin_Text" xml:space="preserve">
+    <value>RecycleBin</value>
+    <comment>RecycleBinItemCollectionNode</comment>
+  </data>
+  <data name="RecycleBin_ToolTip" xml:space="preserve">
+    <value>Recycle Bin</value>
+    <comment>RecycleBinItemCollectionNode</comment>
+  </data>
+  <data name="Refresh_Text" xml:space="preserve">
+    <value>Ladda om</value>
+    <comment>SPMStandardMenuItems</comment>
+  </data>
+  <data name="RestoreAll" xml:space="preserve">
+    <value>Återställ alla</value>
+    <comment>RecycleBinItemCollectionNode</comment>
+  </data>
+  <data name="RunningJobs_Text" xml:space="preserve">
+    <value>Pågående jobb</value>
+    <comment>RunningJobCollectionNode</comment>
+  </data>
+  <data name="RunningJobs_ToolTip" xml:space="preserve">
+    <value>Running Job Collection</value>
+    <comment>RunningJobCollectionNode</comment>
+  </data>
+  <data name="Saving _Changes" xml:space="preserve">
+    <value>Spara ändringar till SharePoint</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Saving_All_Changes" xml:space="preserve">
+    <value>Spara alla ändringar till SharePoint</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="Servers_Text" xml:space="preserve">
+    <value>Servrar</value>
+    <comment>ServerCollectionNode</comment>
+  </data>
+  <data name="Servers_ToolTip" xml:space="preserve">
+    <value>Servrar</value>
+    <comment>ServerCollectionNode</comment>
+  </data>
+  <data name="Services_Text" xml:space="preserve">
+    <value>Tjänster</value>
+    <comment>ServiceCollectionNode</comment>
+  </data>
+  <data name="Services_ToolTip" xml:space="preserve">
+    <value>Service Collection</value>
+    <comment>ServiceCollectionNode</comment>
+  </data>
+  <data name="SiteCollection_SiteCollection_Text" xml:space="preserve">
+    <value>Site Collection</value>
+    <comment>SiteCollectionNode</comment>
+  </data>
+  <data name="SiteCollection_SiteCollection_ToolTip" xml:space="preserve">
+    <value>SPSiteCollection</value>
+    <comment>SiteCollectionNode</comment>
+  </data>
+  <data name="SiteCollection_Site_ToolTip" xml:space="preserve">
+    <value>Site Collection</value>
+    <comment>SiteNode</comment>
+  </data>
+  <data name="SiteFeatures_Text" xml:space="preserve">
+    <value>Site Features</value>
+    <comment>FeatureCollectionNode</comment>
+  </data>
+  <data name="SiteFeatures_ToolTip" xml:space="preserve">
+    <value>Site Feature Collection</value>
+    <comment>FeatureCollectionNode</comment>
+  </data>
+  <data name="Solutions_Text" xml:space="preserve">
+    <value>Solutions</value>
+    <comment>SolutionCollectionNode</comment>
+  </data>
+  <data name="Solutions_ToolTip" xml:space="preserve">
+    <value>Solutions</value>
+    <comment>SolutionCollectionNode</comment>
+  </data>
+  <data name="Specify_Site_Url" xml:space="preserve">
+    <value>Var god ange en sajts URL</value>
+    <comment>RestoreForm</comment>
+  </data>
+  <data name="Succes" xml:space="preserve">
+    <value>Klar!</value>
+    <comment>OpenDBConnection</comment>
+  </data>
+  <data name="Tasks_Text" xml:space="preserve">
+    <value>Uppgifter</value>
+    <comment>SPMStandardMenuItems</comment>
+  </data>
+  <data name="Testing_Database_Connection" xml:space="preserve">
+    <value>Testar databasanslutning</value>
+    <comment>OpenDBConnection</comment>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>Text</value>
+    <comment>TabTextPage</comment>
+  </data>
+  <data name="The_File" xml:space="preserve">
+    <value>Filen</value>
+    <comment>RestoreForm</comment>
+  </data>
+  <data name="Users_Text" xml:space="preserve">
+    <value>Användare</value>
+    <comment>UserCollectionNode</comment>
+  </data>
+  <data name="Users_ToolTip" xml:space="preserve">
+    <value>User Collection</value>
+    <comment>UserCollectionNode</comment>
+  </data>
+  <data name="VersionHistory_File_Text" xml:space="preserve">
+    <value>Version History</value>
+    <comment>FileVersionCollectionNode</comment>
+  </data>
+  <data name="VersionHistory_File_ToolTip" xml:space="preserve">
+    <value>Version History Collection</value>
+    <comment>FileVersionCollectionNode</comment>
+  </data>
+  <data name="VersionHistory_ListItem_Text" xml:space="preserve">
+    <value>Version History</value>
+    <comment>ListItemVersionCollection</comment>
+  </data>
+  <data name="VersionHistory_ListItem_ToolTip" xml:space="preserve">
+    <value>Version History Collection</value>
+    <comment>ListItemVersionCollection</comment>
+  </data>
+  <data name="ViewNode_Message01" xml:space="preserve">
+    <value>(Default)</value>
+    <comment>ViewNode</comment>
+  </data>
+  <data name="ViewsCollection_Text" xml:space="preserve">
+    <value>Views</value>
+    <comment>ViewCollectionNode</comment>
+  </data>
+  <data name="ViewsCollection_ToolTip" xml:space="preserve">
+    <value>View Collection</value>
+    <comment>ViewCollectionNode</comment>
+  </data>
+  <data name="View_ToolTip" xml:space="preserve">
+    <value>SPView</value>
+    <comment>ViewNode</comment>
+  </data>
+  <data name="WebApplications_Text" xml:space="preserve">
+    <value>Webb Applikationer</value>
+    <comment>WebApplicationCollectionNode</comment>
+  </data>
+  <data name="WebApplications_ToolTip" xml:space="preserve">
+    <value>Web Application Collection</value>
+    <comment>WebApplicationCollectionNode</comment>
+  </data>
+  <data name="WebApplication_ToolTip" xml:space="preserve">
+    <value>Web Application</value>
+    <comment>WebApplicationNode</comment>
+  </data>
+  <data name="WebApplication_ToolTip1" xml:space="preserve">
+    <value>Webbapplikation</value>
+    <comment>WebApplicationNode</comment>
+  </data>
+  <data name="WebFeatures_Text" xml:space="preserve">
+    <value>Web Features</value>
+    <comment>FeatureCollectionNode</comment>
+  </data>
+  <data name="WebFeatures_ToolTip" xml:space="preserve">
+    <value>Web Feature Collection</value>
+    <comment>FeatureCollectionNode</comment>
+  </data>
+  <data name="WebParts_Text" xml:space="preserve">
+    <value>WebParts</value>
+    <comment>WebPartCollectionNode</comment>
+  </data>
+  <data name="WebParts_ToolTip" xml:space="preserve">
+    <value>WebPart Collection</value>
+    <comment>WebPartCollectionNode</comment>
+  </data>
+  <data name="Webs_Text" xml:space="preserve">
+    <value>Webar</value>
+    <comment>WebCollectionNode</comment>
+  </data>
+  <data name="Webs_ToolTip" xml:space="preserve">
+    <value>Web Collection</value>
+    <comment>WebCollectionNode</comment>
+  </data>
+  <data name="WorkflowAssociations_Text" xml:space="preserve">
+    <value>Workflow Associations</value>
+    <comment>WorkflowAssociationCollectionNode</comment>
+  </data>
+  <data name="WorkflowAssociations_ToolTip" xml:space="preserve">
+    <value>Workflow Associations</value>
+    <comment>WorkflowAssociationCollectionNode</comment>
+  </data>
+  <data name="WorkflowModifications_Text" xml:space="preserve">
+    <value>Workflow Modifications</value>
+    <comment>WorkflowModificationsCollectionNode</comment>
+  </data>
+  <data name="WorkflowModifications_ToolTip" xml:space="preserve">
+    <value>Ändra ett arbetsflöde  när det körs på en post</value>
+    <comment>WorkflowModificationsCollectionNode</comment>
+  </data>
+  <data name="WorkflowModification_ToolTip" xml:space="preserve">
+    <value>Ändra ett arbetsflöde  när det körs på en post</value>
+    <comment>WorkflowModificationNode</comment>
+  </data>
+  <data name="WorkflowsTasks_Text" xml:space="preserve">
+    <value>Workflows Tasks</value>
+    <comment>WorkflowsTaskCollectionNode</comment>
+  </data>
+  <data name="WorkflowsTasks_ToolTip" xml:space="preserve">
+    <value>Workflows Task Collection</value>
+    <comment>WorkflowsTaskCollectionNode</comment>
+  </data>
+  <data name="Workflows_Text" xml:space="preserve">
+    <value>Workflows</value>
+    <comment>WorkflowCollectionNode</comment>
+  </data>
+  <data name="Workflows_ToolTip" xml:space="preserve">
+    <value>Workflows</value>
+    <comment>WorkflowCollectionNode</comment>
+  </data>
+  <data name="Xml_Text" xml:space="preserve">
+    <value>Xml</value>
+    <comment>TabXmlPage</comment>
+  </data>
+  <data name="Interface_ShallowExpand" xml:space="preserve">
+    <value>Expand nodes on startup (Shallow mode)</value>
+  </data>
+  <data name="Interface_Languages_ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

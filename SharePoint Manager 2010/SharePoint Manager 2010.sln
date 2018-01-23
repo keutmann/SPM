@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePoint Manager 2010", "SharePoint Manager 2007\SharePoint Manager 2010.csproj", "{414997CA-AC7E-4D66-9939-25FD990DA4F9}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs05.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SharePoint\u0020Manager\u00202007\\SharePoint\u0020Manager\u00202010.csproj
+		SccProjectName1 = SharePoint\u0020Manager\u00202007
+		SccLocalPath1 = SharePoint\u0020Manager\u00202007
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{414997CA-AC7E-4D66-9939-25FD990DA4F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{414997CA-AC7E-4D66-9939-25FD990DA4F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{414997CA-AC7E-4D66-9939-25FD990DA4F9}.Debug|x64.ActiveCfg = Debug|x64
+		{414997CA-AC7E-4D66-9939-25FD990DA4F9}.Debug|x64.Build.0 = Debug|x64
+		{414997CA-AC7E-4D66-9939-25FD990DA4F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{414997CA-AC7E-4D66-9939-25FD990DA4F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{414997CA-AC7E-4D66-9939-25FD990DA4F9}.Release|x64.ActiveCfg = Release|x64
+		{414997CA-AC7E-4D66-9939-25FD990DA4F9}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

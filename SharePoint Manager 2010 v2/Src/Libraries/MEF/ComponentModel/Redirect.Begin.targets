@@ -1,0 +1,15 @@
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutputPath>..\..\bin</OutputPath>
+    <WindowsBaseRef>WindowsBase</WindowsBaseRef>
+    <BuildTargetsImport>$(MSBuildBinPath)\Microsoft.CSHARP.Targets</BuildTargetsImport>
+    
+    <!-- Needed for ComponentModelUnitTest project -->
+    <CMProjectPath>..\..\src\ComponentModel</CMProjectPath>
+    <TestFrameworkProjectPath>..\..\Tests\UnitTestFramework</TestFrameworkProjectPath>
+    <UnitTestLibHintPath>Microsoft.VisualStudio.QualityTools.UnitTestFramework</UnitTestLibHintPath>
+    
+    <NoWarn>1570;1572;1573;1591;1699</NoWarn>
+    <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="SPM2.Framework.WPF.Components.BrowserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms">
+    <Grid>
+        <WindowsFormsHost x:Name="browserHost">
+            <forms:WebBrowser x:Name="Browser" x:FieldModifier="public" />
+        </WindowsFormsHost>
+    </Grid>
+</UserControl>
